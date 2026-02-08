@@ -1,0 +1,53 @@
+---
+// Client Logos Section
+// ------------
+// Description: Social proof section with client/partner logos
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+// You can replace these with actual client logos from your assets folder
+const clients = [
+	{ name: 'Client 1', logo: '/logos/logo-01.svg' },
+	{ name: 'Client 2', logo: '/logos/logo-02.svg' },
+	{ name: 'Client 3', logo: '/logos/logo-03.svg' },
+	{ name: 'Client 4', logo: '/logos/logo-04.svg' },
+	{ name: 'Client 5', logo: '/logos/logo-05.svg' },
+	{ name: 'Client 6', logo: '/logos/logo-06.svg' }
+]
+---
+
+<Section id="clients" classes="bg-gradient-to-r from-blue-50 via-white to-purple-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 border-y border-neutral-200 dark:border-neutral-800 relative overflow-hidden">
+	<!-- Background decoration -->
+	<div class="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-purple-100/20 dark:from-blue-900/10 dark:to-purple-900/10"></div>
+	
+	<Row>
+		<Col span="12" align="center" classes="mb-12 relative z-10">
+			<h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Trusted by Industry Leaders</h3>
+			<p class="text-neutral-600 dark:text-neutral-400">
+				Join hundreds of satisfied clients who have transformed their digital presence with us
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		<Col span="12">
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center relative z-10">
+				{
+					clients.map((client) => (
+						<div class="grayscale hover:grayscale-0 transition-all duration-500 opacity-50 hover:opacity-100 hover:scale-110 cursor-pointer">
+							<img
+								src={client.logo}
+								alt={client.name}
+								class="h-12 w-auto object-contain filter drop-shadow-lg"
+								loading="lazy"
+							/>
+						</div>
+					))
+				}
+			</div>
+		</Col>
+	</Row>
+</Section>

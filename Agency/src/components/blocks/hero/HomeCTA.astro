@@ -1,0 +1,86 @@
+---
+// Home page CTA Section
+// ------------
+// Description: A centered call to action section that contains: a title, text, a user review snippet, a button and a image.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import ChipNotification from '../../ui/ChipNotification.astro'
+import { Image } from 'astro:assets'
+import Button from '../../ui/Button.astro'
+import AvatarGroup from '../../ui/AvatarGroup.astro'
+
+// Content
+// - Hero Image
+import heroImage from '../../../assets/hero-01.png'
+import picture1 from '../../../assets/picture1.png'
+// - Avatars
+import user1 from '../../../assets/avatars/avatar-01.webp'
+import user2 from '../../../assets/avatars/avatar-02.webp'
+import user3 from '../../../assets/avatars/avatar-03.webp'
+const avatars = [
+	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
+	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
+	{ image: { src: user3.src, alt: 'user name' }, link: '/' }
+]
+---
+
+<Section id="intro" padding="top" classes="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-neutral-950 dark:via-indigo-950 dark:to-purple-950 pb-16 relative overflow-hidden">
+	<!-- Animated background elements -->
+	<div class="absolute inset-0 overflow-hidden pointer-events-none">
+		<div class="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
+		<div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-indigo-400/20 to-pink-400/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+	</div>
+	
+	<Row>
+		<Col span="2" />
+		<Col span="8" align="center">
+			<ChipNotification classes="backdrop-blur-sm bg-white/80 dark:bg-neutral-800/80 shadow-lg animate-fadeInUp">
+				<span>🎉 Trusted by 500+ businesses</span>
+			</ChipNotification>
+			<h1 class="text-5xl md:text-6xl lg:text-7xl animate-fadeInUp" style="animation-delay: 0.1s;">
+				Transform Your Vision Into <strong class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400">Digital Reality</strong>
+			</h1>
+
+			<p class="pb-0 text-lg md:text-xl max-w-2xl mx-auto animate-fadeInUp" style="animation-delay: 0.2s;">
+				We create stunning websites and digital experiences that drive results. From design to deployment, 
+				we're your partner in digital excellence.
+			</p>
+			<div class="flex flex-wrap gap-4 justify-center mt-8 animate-fadeInUp" style="animation-delay: 0.3s;">
+				<Button size="lg" link="/contact" classes="shadow-glow-primary hover:shadow-glow-blue transition-all duration-300 hover:scale-105">Start Your Project</Button>
+				<Button size="lg" link="/pricing" variation="outline" classes="hover:shadow-lg transition-all duration-300 hover:scale-105">View Pricing</Button>
+			</div>
+			
+			<!-- Stats -->
+			<div class="flex flex-wrap gap-8 justify-center mt-12 text-left animate-fadeInUp" style="animation-delay: 0.4s;">
+				<div class="group">
+					<div class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform">500+</div>
+					<div class="text-sm text-neutral-600 dark:text-neutral-400">Projects Completed</div>
+				</div>
+				<div class="group">
+					<div class="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform">98%</div>
+					<div class="text-sm text-neutral-600 dark:text-neutral-400">Client Satisfaction</div>
+				</div>
+				<div class="group">
+					<div class="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform">10+</div>
+					<div class="text-sm text-neutral-600 dark:text-neutral-400">Years Experience</div>
+				</div>
+			</div>
+		</Col>
+		<Col span="2" />
+		<Col span="2" />
+		<Col classes="p-4" span="8">
+			<Image 
+				src={picture1}
+				alt="Foxi. The tailwind astro theme"
+				class="translate-y-8 shadow-modern-xl hover:shadow-modern-xl rounded-2xl transform hover:scale-[1.02] transition-all duration-500 animate-scaleIn ring-1 ring-neutral-200/50 dark:ring-neutral-700/50"
+				format="webp"
+			/></Col
+		>
+		<Col span="2" />
+	</Row>
+</Section>

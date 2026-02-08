@@ -1,0 +1,88 @@
+---
+// CTA
+// ------------
+// Description: a basic call to action component
+// Properties:
+// - Title: the title of the CTA
+// - Text: the text of the CTA
+// - Mode: the mode of the CTA (light, dark)
+// - Bg: the background of the CTA
+// - classes: additional classes
+
+// Props
+type Props = {
+	title?: string
+	text?: string
+	mode?: 'light' | 'dark'
+	bg?: any
+	classes?: string
+}
+const {
+	title = 'Get started now',
+	text = 'Get started today and see the difference for yourself!',
+	mode ,
+	bg,
+	classes
+} = Astro.props
+---
+
+<div
+	class:list={['cta', { [`${classes}`]: classes }, { [`${mode}`]: mode }]}
+	style={bg ? { backgroundImage: `url(${bg.src})` } : {}}
+>
+	<div class="cta__body">
+		<h2 class="cta__heading" set:html={title} />
+		<p class="cta__text" set:html={text} />
+	</div>
+	<slot />
+</div>
+
+<style>
+	.cta {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+		border-radius: 0.25rem;
+		border-width: 1px;
+		border-color: rgb(245 245 245);
+		background-color: rgb(250 250 250);
+		background-size: cover;
+		background-position: center;
+		padding: 2rem;
+		text-align: center;
+		box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+	}
+	
+	@media (min-width: 1024px) {
+		.cta {
+			padding: 4rem;
+		}
+	}
+	
+	:global(.dark) .cta {
+		border-color: rgb(38 38 38);
+		background-color: rgb(23 23 23);
+	}
+	
+	.cta__heading {
+		margin-bottom: 1.5rem;
+		text-wrap: pretty;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+	
+	@media (min-width: 1024px) {
+		.cta__heading {
+			font-size: 2.25rem;
+			line-height: 2.5rem;
+		}
+	}
+	
+	.cta__text {
+		max-width: 56rem;
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+	}
+</style>

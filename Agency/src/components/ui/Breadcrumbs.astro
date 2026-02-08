@@ -1,0 +1,133 @@
+---
+// Breadcrumbs
+// ------------
+// Description: Breadcrumbs consist of a list of links that help a user visualize a page's location within the hierarchical structure of a website, and allow navigation up to any of its "ancestors".
+// Properties:
+// - Classes: additional classes
+
+// Reference: https://wind-ui.com/components/breadcrumbs/
+
+// Components
+// - UI
+import { Icon } from 'astro-icon/components'
+
+// URL Parsing and breadcrumb generation
+const url = new URL(Astro.request.url)
+const pathname = url.pathname
+const segments = pathname.split('/').filter(Boolean)
+const breadcrumbs = ['Home', ...segments]
+
+// Props
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+---
+
+<nav aria-label="Breadcrumb" class:list={['breadcrumbs', { [`${classes}`]: classes }]}>
+	<ol class="breadcrumbs__list">
+		{
+			breadcrumbs.map((segment, index) => (
+				<li class="breadcrumbs__list-item">
+					<a href={`/${segments.slice(0, index).join('/')}`} class="breadcrumbs__item-link">
+						{index === 0 ? segment : segment.replace(/-/g, ' ')}
+					</a>
+					{index < breadcrumbs.length - 1 && (
+						<Icon name="chevron-left" class="breadcrumbs__item-icon" />
+					)}
+				</li>
+			))
+		}
+	</ol>
+</nav>
+
+<style>
+	.breadcrumbs {
+		display: inline-flex;
+		border-radius: 0.25rem;
+		border-width: 1px;
+		border-color: rgb(229 229 229);
+		background-color: rgb(255 255 255 / 0.5);
+		padding-left: 1rem;
+		padding-right: 1rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+		color: rgb(115 115 115);
+	}
+	
+	:global(.dark) .breadcrumbs {
+		border-color: rgb(38 38 38);
+		background-color: rgb(38 38 38 / 0.5);
+		color: rgb(212 212 212);
+	}
+	
+	.breadcrumbs__list {
+		display: inline-flex;
+		align-items: center;
+	}
+	
+	.breadcrumbs__list-item {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	
+	.breadcrumbs__list-item:not(:first-child):not(:last-child) {
+		display: none;
+	}
+	
+	@media (min-width: 768px) {
+		.breadcrumbs__list-item:not(:first-child):not(:last-child) {
+			display: flex;
+		}
+	}
+	
+	.breadcrumbs__item-link {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		text-transform: capitalize;
+		color: rgb(64 64 64);
+		transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 150ms;
+	}
+	
+	.breadcrumbs__item-link:last-child {
+		pointer-events: none;
+		color: rgb(163 163 163);
+	}
+	
+	.breadcrumbs__item-link:hover {
+		color: rgb(var(--color-primary-500));
+	}
+	
+	:global(.dark) .breadcrumbs__item-link {
+		color: rgb(250 250 250);
+	}
+	
+	.breadcrumbs__item-icon {
+		height: 1rem;
+		width: 1rem;
+		flex: none;
+		color: rgb(64 64 64);
+		transition-property: transform;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 150ms;
+	}
+	
+	@media (min-width: 768px) {
+		.breadcrumbs__item-icon {
+			transform: rotate(180deg);
+		}
+	}
+	
+	:global(.dark) .breadcrumbs__item-icon {
+		color: rgb(250 250 250);
+	}
+</style>

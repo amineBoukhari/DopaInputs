@@ -1,0 +1,35 @@
+---
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import FormHero from '../components/blocks/hero/ContactHero.astro'
+import CTA from '../components/blocks/CTA/BasicDark.astro'
+import ContactCards from '../components/blocks/contact/ContactCards.astro'
+import SocialProof from '../components/blocks/socialproof/Basic.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Contact Us | Let\'s Start Your Project',
+	description:
+		'Have questions or ready to start your project? Get in touch with our team today. We\'re here to help bring your digital vision to life with expert guidance and support.'
+}
+// - Page Header
+const header = {
+	title: 'Let\'s <strong class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Create Something</strong> Amazing Together',
+	text: "Whether you have a question, need support, or want to discuss your next project, we're here to help. Reach out and let's start the conversation."
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<FormHero
+		title={header.title}
+		text={header.text}
+		id="contact"
+		classes="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-neutral-950 dark:via-indigo-950 dark:to-purple-950"
+	/>
+	<ContactCards classes="bg-white dark:bg-neutral-900" />
+	<SocialProof classes="bg-gradient-to-r from-blue-50 via-white to-purple-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" />
+	<CTA />
+</Layout>

@@ -1,0 +1,123 @@
+---
+// Rating
+// ------------
+// Description: the rating component is a ui element that allows users to rate a product or service.
+// Properties:
+// - Title: the title of the rating
+// - Text: the text of the rating
+// - HelperText: the helper text of the rating
+// - Rating: the rating of the rating (0 to 5)
+// - Size: the size of the rating (base, sm)
+// - Elevated: whether the rating is elevated or not
+// - classes: additional classes
+// Reference: https://wind-ui.com/components/ratings/
+
+// Components
+// - UI
+import { Icon } from 'astro-icon/components'
+
+// Props
+type Props = {
+	title?: string
+	text?: string
+	helperText?: string
+	rating: 0 | 1 | 2 | 3 | 4 | 5
+	size?: 'base' | 'sm'
+	elevated?: boolean
+	classes?: string
+}
+const { rating = 0, size = 'base', elevated, title, text, helperText, classes } = Astro.props
+---
+
+<div
+	class:list={[
+		'rating',
+		{ ['rating--elevated']: elevated },
+		{ ['rating--' + `${size}`]: size },
+		{ [`${classes}`]: classes }
+	]}
+>
+	{title && <h4 class="rating__title">{title}</h4>}
+	<span class="rating__body">
+		<span class="rating__stars" role="img" aria-label={`Rating: ${rating} out of 5 stars`}>
+			{
+				Array.from({ length: 5 }, (_, index) => (
+					<span aria-hidden="true">
+						<Icon name={index < rating ? 'filled-star' : 'empty-star'} />
+					</span>
+				))
+			}
+		</span>
+		{text && <span>{text}</span>}
+	</span>
+	{helperText && <span class="rating__helper-text"> {helperText} </span>}
+</div>
+
+<style>
+	.rating {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	
+	.rating__title {
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1.5rem;
+		font-weight: 700;
+	}
+	
+	.rating__body {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		border-radius: 0.25rem;
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+		color: rgb(115 115 115);
+	}
+	
+	:global(.dark) .rating__body {
+		color: rgb(212 212 212);
+	}
+	
+	.rating--elevated .rating__body {
+		background-color: rgb(250 250 250);
+		padding-left: 1rem;
+		padding-right: 1rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+	}
+	
+	:global(.dark) .rating--elevated .rating__body {
+		background-color: rgb(64 64 64);
+		box-shadow: 0 4px 6px -1px rgb(64 64 64 / 0.3), 0 2px 4px -2px rgb(64 64 64 / 0.3);
+	}
+	
+	.rating__stars {
+		display: flex;
+		color: rgb(251 191 36);
+	}
+	
+	.rating--base .rating__stars {
+		gap: 0.25rem;
+	}
+	
+	.rating--base .rating__stars :global(svg) {
+		height: 1.5rem;
+		width: 1.5rem;
+	}
+	
+	.rating--sm .rating__stars :global(svg) {
+		height: 1rem;
+		width: 1rem;
+	}
+	
+	.rating__helper-text {
+		font-size: 0.75rem;
+		line-height: 1.5rem;
+		color: rgb(163 163 163);
+	}
+</style>

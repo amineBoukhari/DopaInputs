@@ -1,0 +1,80 @@
+---
+// Process Section
+// ------------
+// Description: Shows the work process/methodology in steps
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+const steps = [
+	{
+		number: '01',
+		title: 'Discovery & Planning',
+		description: 'We start by understanding your business goals, target audience, and project requirements to create a solid foundation.'
+	},
+	{
+		number: '02',
+		title: 'Design & Prototype',
+		description: 'Our designers create stunning visual concepts and interactive prototypes that bring your vision to life.'
+	},
+	{
+		number: '03',
+		title: 'Development',
+		description: 'Our developers build your project using cutting-edge technologies, ensuring performance and scalability.'
+	},
+	{
+		number: '04',
+		title: 'Launch & Support',
+		description: 'We deploy your project and provide ongoing support to ensure everything runs smoothly and continues to evolve.'
+	}
+]
+---
+
+<Section id="process" classes="bg-gradient-to-br from-neutral-900 via-indigo-950 to-neutral-900 dark:from-black dark:via-indigo-950 dark:to-black text-white relative overflow-hidden">
+	<!-- Animated background elements -->
+	<div class="absolute inset-0 opacity-30">
+		<div class="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-600/30 to-indigo-600/30 rounded-full blur-3xl animate-float"></div>
+		<div class="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-br from-purple-600/30 to-pink-600/30 rounded-full blur-3xl animate-float" style="animation-delay: 3s;"></div>
+	</div>
+	
+	<Row>
+		<Col span="12" align="center" classes="mb-16 relative z-10">
+			<span class="inline-block px-5 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full text-sm font-semibold mb-4 shadow-glow-blue hover:shadow-glow-primary transition-all duration-300 hover:scale-105">
+				OUR PROCESS
+			</span>
+			<h2 class="text-pretty text-4xl md:text-5xl text-white">
+				How We <strong class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Work</strong>
+			</h2>
+			<p class="pb-0 text-lg text-neutral-400 max-w-3xl mx-auto">
+				A proven methodology that delivers exceptional results every time
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		{
+			steps.map((step, index) => (
+				<Col span="3" classes="mb-8">
+					<div class="relative group">
+						{index < steps.length - 1 && (
+							<div class="hidden lg:block absolute top-16 left-full w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+						)}
+						<div class="relative mb-8">
+							<div class="text-7xl font-bold text-blue-600/10 mb-4 transition-all duration-500 group-hover:text-blue-600/20 group-hover:scale-110">{step.number}</div>
+							<div class="absolute top-2 left-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-glow-blue transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+								<span class="text-2xl font-bold text-white">{step.number}</span>
+							</div>
+						</div>
+						<h3 class="text-xl font-bold mb-3 mt-8 text-white group-hover:text-blue-400 transition-colors duration-300">{step.title}</h3>
+						<p class="text-neutral-400 group-hover:text-neutral-300 transition-colors duration-300">{step.description}</p>
+						
+						<!-- Hover glow effect -->
+						<div class="absolute -inset-4 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+					</div>
+				</Col>
+			))
+		}
+	</Row>
+</Section>

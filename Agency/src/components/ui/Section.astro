@@ -1,0 +1,163 @@
+---
+// Section
+// ------------
+// Description: a foundational component representing a section of content within page. The section component can contain any number of rows.
+// Properties:
+// - Id: the id of the section
+// - FullWidth: whether the section is will expand to full width or not
+// - StickyCol: specifies wether the section can contain a sticky column or not
+// - Mode:  use that to overide the light/dark mode for a specific section. Usefull if you have a section that might contain a dark background
+// - Padding: by default each section has a vertical padding. The padding property defines where the padding is applied (top, bottom, both, none), default is both
+// - Bg: the background image of the section
+// - BgPosition: the position of the background (center, top, bottom)
+// - BgHeight: the height of the background
+// - classes: additional classes
+
+// Props
+type BgProps =  {
+	src: string
+	width: number
+	height: number
+	format: string
+}
+type Props = {
+	id?: string
+	fullWidth?: boolean
+	stickyCol?: boolean
+	mode?: 'dark' | 'light'
+	padding?: 'both' | 'top' | 'bottom' | 'none'
+	bg?: BgProps
+	bgPosition?: string
+	bgHeight?: string
+	classes?: string
+}
+const {
+	id,
+	fullWidth,
+	stickyCol = false,
+	mode,
+	padding = 'both',
+	bg,
+	bgPosition = 'center',
+	bgHeight = '100%',
+	classes
+} = Astro.props
+
+const bgStyle = bg
+	? {
+			backgroundImage: `url(${bg.src})`,
+			height: bgHeight,
+			backgroundPosition: bgPosition
+		}
+	: {
+			height: bgHeight
+		}
+---
+
+<section
+	{...id ? { id } : {}}
+	class:list={[
+		'section',
+		{ 'section--sticky-col': stickyCol },
+		{ 'section--fullwidth': fullWidth },
+		{ 'section--padded': padding === 'both' },
+		{ 'section--padded-t': padding === 'top' },
+		{ 'section--padded-b': padding === 'bottom' },
+		{ [`${mode}`]: mode },
+		{ [`${classes}`]: classes }
+	]}
+>
+	<div class="section__bg" style={bgStyle}></div>
+	<div class="container">
+		<slot />
+	</div>
+</section>
+
+<style>
+	.section {
+		position: relative;
+		color: rgb(115 115 115);
+	}
+	
+	:global(.dark) .section {
+		color: rgb(163 163 163);
+	}
+	
+	.section.dark:not([class*='bg-']) {
+		background-color: rgb(10 10 10);
+	}
+	
+	.section.dark {
+		color: rgb(163 163 163);
+	}
+	
+	.section.light:not([class*='bg-']) {
+		background-color: rgb(255 255 255);
+	}
+	
+	.section.light {
+		background-color: rgb(255 255 255);
+		color: rgb(115 115 115);
+	}
+	
+	.section.section--sticky-col .container {
+		height: 100%;
+	}
+	
+	.section:not(.section--sticky-col) {
+		overflow: hidden;
+	}
+	
+	.section--padded {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+	
+	@media (min-width: 1024px) {
+		.section--padded {
+			padding-top: 6rem;
+			padding-bottom: 6rem;
+		}
+	}
+	
+	.section--padded-t {
+		padding-top: 3rem;
+	}
+	
+	@media (min-width: 1024px) {
+		.section--padded-t {
+			padding-top: 6rem;
+		}
+	}
+	
+	.section--padded-b {
+		padding-bottom: 3rem;
+	}
+	
+	@media (min-width: 1024px) {
+		.section--padded-b {
+			padding-bottom: 6rem;
+		}
+	}
+	
+	.section__bg {
+		position: absolute;
+		inset: 0;
+		background-size: cover;
+	}
+	
+	.container {
+		position: relative;
+		z-index: 1;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+	
+	.section--fullwidth .container {
+		max-width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+</style>
