@@ -1,0 +1,280 @@
+---
+// Results Visualization Section
+// ------------
+// Description: Section showing potential results with infographics and stats
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import Button from '../../ui/Button.astro'
+---
+
+<Section id="results" classes="bg-gradient-to-b from-white via-primary-50/30 to-white dark:from-neutral-950 dark:via-secondary-950/20 dark:to-neutral-950 relative overflow-hidden py-24">
+	<!-- Enhanced Decorative elements -->
+	<div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+		<div class="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-primary-400/20 to-secondary-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
+		<div class="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-accent-400/20 to-warning-400/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+		<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-secondary-300/10 to-primary-300/10 rounded-full blur-3xl"></div>
+	</div>
+	
+	<Row>
+		<Col span="12" align="center" classes="mb-16 max-w-5xl mx-auto relative z-10">
+			<div class="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white rounded-full text-sm font-bold mb-6 shadow-2xl hover:shadow-primary-500/50 transition-all duration-500 hover:scale-105 cursor-default">
+				<svg class="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+					<path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+				</svg>
+				RÉSULTATS MESURABLES & CONCRETS
+			</div>
+			<h2 class="text-pretty text-4xl md:text-5xl">
+				Imaginez ce que votre site pourrait vous rapporter
+			</h2>
+			<p class="pb-0 text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 max-w-4xl mx-auto font-medium leading-relaxed">
+				Des leads qualifiés, des chantiers supplémentaires et une visibilité locale renforcée — 
+				<span class="text-primary-600 dark:text-primary-400 font-bold">même si votre site actuel ne génère rien.</span>
+			</p>
+		</Col>
+	</Row>
+	
+	<!-- Before/After Comparison -->
+	<Row>
+		<Col span="12" classes="mb-16">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid md:grid-cols-2 gap-12">
+					<!-- BEFORE Card -->
+					<div class="group bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900 rounded-3xl shadow-2xl p-10 md:p-12 border-2 border-neutral-300 dark:border-neutral-700 relative overflow-hidden hover:shadow-3xl transition-all duration-500">
+						<div class="absolute inset-0 bg-gradient-to-br from-neutral-500/5 to-neutral-600/5 opacity-50"></div>
+						<div class="absolute top-6 right-6 px-5 py-2 bg-neutral-600 text-white rounded-full text-sm font-bold shadow-lg">
+							❌ AVANT
+						</div>
+						<h3 class="text-3xl font-black mb-8 text-neutral-800 dark:text-neutral-200 relative z-10">
+							Sans Vitanorix
+						</h3>
+						
+						<!-- Before Metrics -->
+						<div class="space-y-6">
+							<!-- Visitors -->
+							<div>
+								<div class="flex items-center justify-between mb-2">
+									<span class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Visiteurs mensuels</span>
+									<span class="text-lg font-bold text-neutral-700 dark:text-neutral-300">50</span>
+								</div>
+								<div class="w-full bg-neutral-300 dark:bg-neutral-700 rounded-full h-3">
+									<div class="bg-neutral-500 h-3 rounded-full" style="width: 20%"></div>
+								</div>
+							</div>
+							
+							<!-- Leads -->
+							<div>
+								<div class="flex items-center justify-between mb-2">
+									<span class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Demandes de devis</span>
+									<span class="text-lg font-bold text-neutral-700 dark:text-neutral-300">2-3</span>
+								</div>
+								<div class="w-full bg-neutral-300 dark:bg-neutral-700 rounded-full h-3">
+									<div class="bg-neutral-500 h-3 rounded-full" style="width: 15%"></div>
+								</div>
+							</div>
+							
+							<!-- Conversion -->
+							<div>
+								<div class="flex items-center justify-between mb-2">
+									<span class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Nouveaux chantiers</span>
+									<span class="text-lg font-bold text-neutral-700 dark:text-neutral-300">0-1</span>
+								</div>
+								<div class="w-full bg-neutral-300 dark:bg-neutral-700 rounded-full h-3">
+									<div class="bg-neutral-500 h-3 rounded-full" style="width: 10%"></div>
+								</div>
+							</div>
+							
+							<!-- Local Visibility -->
+							<div>
+								<div class="flex items-center justify-between mb-2">
+									<span class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Visibilité locale</span>
+									<span class="text-lg font-bold text-neutral-700 dark:text-neutral-300">Faible</span>
+								</div>
+								<div class="w-full bg-neutral-300 dark:bg-neutral-700 rounded-full h-3">
+									<div class="bg-neutral-500 h-3 rounded-full" style="width: 25%"></div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="mt-8 p-4 bg-neutral-200 dark:bg-neutral-900 rounded-xl">
+							<div class="flex items-center gap-2 text-neutral-600 dark:text-neutral-400">
+								<svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+								</svg>
+								<span class="text-sm">Site non optimisé, peu visible sur Google</span>
+							</div>
+						</div>
+					</div>
+					
+					<!-- AFTER Card -->
+					<div class="group relative bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 dark:from-primary-900/30 dark:via-secondary-900/30 dark:to-accent-900/30 rounded-3xl shadow-2xl p-10 md:p-12 border-2 border-primary-500 overflow-hidden hover:shadow-primary-500/50 hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
+						<div class="absolute inset-0 bg-gradient-to-br from-primary-400/10 via-secondary-400/10 to-accent-400/10 animate-pulse-slow"></div>
+						<div class="absolute top-6 right-6 px-5 py-2 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white rounded-full text-sm font-bold shadow-xl animate-pulse">
+							✨ APRÈS
+						</div>
+						<h3 class="text-3xl font-black mb-8 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent relative z-10">
+							Avec Vitanorix
+						</h3>
+						
+						<!-- After Metrics -->
+						<div class="space-y-6">
+							<!-- Visitors -->
+							<div>
+								<div class="flex items-center justify-between mb-2">
+									<span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Visiteurs mensuels</span>
+									<span class="text-lg font-bold text-primary-600 dark:text-primary-400">250+</span>
+								</div>
+								<div class="w-full bg-primary-200 dark:bg-primary-900/40 rounded-full h-3">
+									<div class="bg-gradient-to-r from-primary-500 to-secondary-500 h-3 rounded-full animate-pulse" style="width: 85%"></div>
+								</div>
+							</div>
+							
+							<!-- Leads -->
+							<div>
+								<div class="flex items-center justify-between mb-2">
+									<span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Demandes de devis</span>
+									<span class="text-lg font-bold text-secondary-600 dark:text-secondary-400">10-15</span>
+								</div>
+								<div class="w-full bg-secondary-200 dark:bg-secondary-900/40 rounded-full h-3">
+									<div class="bg-gradient-to-r from-secondary-500 to-accent-500 h-3 rounded-full animate-pulse" style="width: 75%"></div>
+								</div>
+							</div>
+							
+							<!-- Conversion -->
+							<div>
+								<div class="flex items-center justify-between mb-2">
+									<span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Nouveaux chantiers</span>
+									<span class="text-lg font-bold text-accent-600 dark:text-accent-400">4-6</span>
+								</div>
+								<div class="w-full bg-accent-200 dark:bg-accent-900/40 rounded-full h-3">
+									<div class="bg-gradient-to-r from-accent-500 to-primary-500 h-3 rounded-full animate-pulse" style="width: 70%"></div>
+								</div>
+							</div>
+							
+							<!-- Local Visibility -->
+							<div>
+								<div class="flex items-center justify-between mb-2">
+									<span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Visibilité locale</span>
+									<span class="text-lg font-bold text-primary-600 dark:text-primary-400">Excellente</span>
+								</div>
+								<div class="w-full bg-primary-200 dark:bg-primary-900/40 rounded-full h-3">
+									<div class="bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 h-3 rounded-full animate-pulse" style="width: 95%"></div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="mt-8 p-4 bg-gradient-to-r from-success-50 to-success-100 dark:from-success-900/20 dark:to-success-800/20 rounded-xl border border-success-300 dark:border-success-700">
+							<div class="flex items-center gap-2 text-success-700 dark:text-success-300">
+								<svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+								</svg>
+								<span class="text-sm font-medium">Site optimisé SEO, 1ère page Google locale</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Transformation Arrow -->
+				 
+				<div class="flex justify-center my-8">
+					<a href="/contact" target="_self" class="button button--lg button--primary shadow-glow-primary hover:shadow-glow-blue transition-all duration-300 hover:scale-105" data-astro-cid-6ygtcg62="">
+TRANSFORMATION EN 90 JOURS
+</a>
+					
+				</div>
+			</div>
+		</Col>
+	</Row>
+	
+
+	<Row>
+		<Col span="4" classes="mb-8">
+			<div class="group relative h-full p-10 rounded-3xl bg-gradient-to-br from-white to-primary-50/50 dark:from-neutral-900 dark:to-primary-950/30 border-2 border-primary-200 dark:border-primary-800 shadow-xl hover:shadow-2xl hover:shadow-primary-500/30 transition-all duration-500 hover:-translate-y-3 text-center overflow-hidden">
+				<div class="absolute inset-0 bg-gradient-to-br from-primary-400/5 to-secondary-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+				<div class="relative z-10">
+					<div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-primary-500 via-primary-600 to-secondary-600 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+						<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+						</svg>
+					</div>
+					<div class="text-5xl font-black bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent mb-3">+50%</div>
+					<p class="text-neutral-700 dark:text-neutral-300 font-semibold text-lg">de visibilité locale</p>
+				</div>
+			</div>
+		</Col>
+		<Col span="4" classes="mb-8">
+			<div class="group relative h-full p-10 rounded-3xl bg-gradient-to-br from-white to-secondary-50/50 dark:from-neutral-900 dark:to-secondary-950/30 border-2 border-secondary-200 dark:border-secondary-800 shadow-xl hover:shadow-2xl hover:shadow-secondary-500/30 transition-all duration-500 hover:-translate-y-3 text-center overflow-hidden">
+				<div class="absolute inset-0 bg-gradient-to-br from-secondary-400/5 to-accent-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+				<div class="relative z-10">
+					<div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-secondary-500 via-secondary-600 to-accent-600 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+						<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+						</svg>
+					</div>
+					<div class="text-5xl font-black bg-gradient-to-r from-secondary-600 via-accent-600 to-warning-600 bg-clip-text text-transparent mb-3">3x</div>
+					<p class="text-neutral-700 dark:text-neutral-300 font-semibold text-lg">plus de demandes de devis</p>
+				</div>
+			</div>
+		</Col>
+		<Col span="4" classes="mb-8">
+			<div class="group relative h-full p-10 rounded-3xl bg-gradient-to-br from-white to-accent-50/50 dark:from-neutral-900 dark:to-accent-950/30 border-2 border-accent-200 dark:border-accent-800 shadow-xl hover:shadow-2xl hover:shadow-accent-500/30 transition-all duration-500 hover:-translate-y-3 text-center overflow-hidden">
+				<div class="absolute inset-0 bg-gradient-to-br from-accent-400/5 to-success-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+				<div class="relative z-10">
+					<div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-accent-500 via-accent-600 to-success-600 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+						<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+						</svg>
+					</div>
+					<div class="text-5xl font-black bg-gradient-to-r from-accent-600 via-success-600 to-warning-600 bg-clip-text text-transparent mb-3">100%</div>
+					<p class="text-neutral-700 dark:text-neutral-300 font-semibold text-lg">Site optimisé pour attirer des clients sérieux</p>
+				</div>
+			</div>
+		</Col>
+	</Row>
+	
+	<Row>
+		<Col span="12" align="center" classes="mt-12">
+			<Button size="lg" link="#case-study" classes="shadow-glow-primary hover:shadow-glow-blue transition-all duration-500 hover:scale-110 text-lg px-10 py-4">
+				<span class="flex items-center gap-3">
+					Voir comment votre site peut générer plus de chantiers
+					<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+					</svg>
+				</span>
+			</Button>
+		</Col>
+	</Row>
+</Section>
+
+<style>
+	@keyframes pulse-slow {
+		0%, 100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0.8;
+		}
+	}
+
+	.animate-pulse-slow {
+		animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+
+	@keyframes gradient {
+		0%, 100% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+	}
+
+	.animate-gradient {
+		background-size: 200% 200%;
+		animation: gradient 3s ease infinite;
+	}
+</style>

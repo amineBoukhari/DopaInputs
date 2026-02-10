@@ -4,34 +4,32 @@
 import Layout from '../layouts/Layout.astro'
 // - UI
 import Hero from '../components/blocks/hero/HomeCTA.astro'
+import ResultsVisualization from '../components/blocks/features/ResultsVisualization.astro'
+import CaseStudy from '../components/blocks/features/CaseStudy.astro'
 import ServicesGrid from '../components/blocks/services/ServicesGrid.astro'
-import ClientLogos from '../components/blocks/socialproof/ClientLogos.astro'
-import ProjectShowcase from '../components/blocks/portfolio/ProjectShowcase.astro'
-import Features from '../components/blocks/features/FeatureCards.astro'
+import ServicesShowcase from '../components/blocks/services/ServicesShowcase.astro'
 import ProcessSteps from '../components/blocks/process/ProcessSteps.astro'
-import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
-import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
-import CTA from '../components/blocks/CTA/BasicDark.astro'
+import PricingBTP from '../components/blocks/pricing/PricingBTP.astro'
+import FAQBTP from '../components/blocks/FAQ/FAQBTP.astro'
+import FinalCTA from '../components/blocks/CTA/FinalCTA.astro'
 
 // Content
-// - Testimonial background
-import testimonialBackground from '../assets/testimonial-bg-01.webp'
 // - SEO
 const SEO = {
-	title: 'Digital Agency | Transform Your Vision Into Reality',
+	title: 'Vitanorix | Générateur de Clients et Chantiers BTP',
 	description:
-		'We create stunning websites and digital experiences that drive results. From design to deployment, we\'re your partner in digital excellence. Trusted by 500+ businesses.'
+		'Vitanorix transforme votre site web en un générateur de clients et de chantiers. Des leads qualifiés, une visibilité locale renforcée et des résultats concrets pour votre entreprise BTP.'
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero />
-	<ClientLogos />
+	<ResultsVisualization />
+	<CaseStudy />
+	<ServicesShowcase />
 	<ServicesGrid />
 	<ProcessSteps />
-	<ProjectShowcase />
-	<Features />
-	<Testimonial bg={testimonialBackground} bgPosition="right" />
-	<HighlightBlocks />
-	<CTA />
+	<PricingBTP />
+	<FAQBTP />
+	<FinalCTA />
 </Layout>

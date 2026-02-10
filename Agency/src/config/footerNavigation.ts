@@ -35,77 +35,62 @@ export interface FooterData {
 
 export const footerNavigationData: FooterData = {
 	footerAbout: {
-		title: 'Foxi.',
+		title: 'Vitanorix.',
 		aboutText:
-			'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
+			" Que vous n'ayez pas encore de site ou que votre site actuel peine à générer des projets, nous transformons votre présence en ligne en un véritable générateur de clients.",
 		logo: {
-			src: '/logo.svg',
-			alt: 'The tailwind astro theme',
-			text: 'Foxi.'
+			src: '/logo.png',
+			alt: 'Vitanorix',
+			text: 'Vitanorix.'
 		}
 	},
 	footerColumns: [
 		{
-			category: 'Product',
+			category: 'Produit',
 			subCategories: [
 				{
-					subCategory: 'Features',
-					subCategoryLink: '/features'
+					subCategory: 'Services',
+					subCategoryLink: '/services'
 				},
 				{
 					subCategory: 'FAQ',
 					subCategoryLink: '/faq'
 				},
 				{
-					subCategory: 'Pricing',
+					subCategory: 'Tarifs',
 					subCategoryLink: '/pricing'
 				},
+			
 				{
-					subCategory: 'Changelog',
-					subCategoryLink: '/changelog'
-				},
-				{
-					subCategory: 'Terms',
+					subCategory: 'Conditions',
 					subCategoryLink: '/terms'
 				}
 			]
 		},
 		{
-			category: 'About us',
+			category: 'À propos',
 			subCategories: [
 				{
-					subCategory: 'About us',
-					subCategoryLink: '/'
+					subCategory: 'À propos',
+					subCategoryLink: '/about-us'
 				},
 				{
-					subCategory: 'News',
-					subCategoryLink: '/blog'
-				},
-				{
-					subCategory: 'Careers',
+					subCategory: 'Blogs',
 					subCategoryLink: '/blog'
 				}
 			]
 		},
 		{
-			category: 'Get in touch',
+			category: 'Nous contacter',
 			subCategories: [
 				{
 					subCategory: 'Contact',
 					subCategoryLink: '/contact'
 				},
-				{
-					subCategory: 'Support',
-					subCategoryLink: '/contact'
-				},
-				{
-					subCategory: 'Join us',
-					subCategoryLink: '/contact'
-				}
 			]
 		}
 	],
 	subFooter: {
-		copywriteText: '© Foxi 2024.'
+		copywriteText: '© Vitanorix 2024.'
 	}
 }

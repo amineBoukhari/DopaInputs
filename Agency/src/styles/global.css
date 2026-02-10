@@ -123,8 +123,8 @@ main a {
 }
 
 @keyframes pulse-glow {
-	0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-	50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+	0%, 100% { box-shadow: 0 0 20px theme('colors.primary.500 / 0.3'); }
+	50% { box-shadow: 0 0 40px theme('colors.primary.500 / 0.6'); }
 }
 
 /* Utility Classes for Modern Design */
@@ -141,19 +141,19 @@ main a {
 }
 
 .gradient-primary {
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	@apply bg-gradient-to-br from-primary-500 to-primary-500;
 }
 
 .gradient-blue {
-	background: linear-gradient(135deg, #667eea 0%, #3b82f6 100%);
+	@apply bg-gradient-to-br from-primary-500 to-primary-500;
 }
 
 .gradient-purple {
-	background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+	@apply bg-gradient-to-br from-primary-500 to-primary-500;
 }
 
 .gradient-animate {
-	background: linear-gradient(270deg, #667eea, #764ba2, #3b82f6);
+	background: linear-gradient(270deg, theme('colors.primary.500'), theme('colors.primary.500'), theme('colors.primary.500'));
 	background-size: 600% 600%;
 	animation: gradient 15s ease infinite;
 }
@@ -171,11 +171,11 @@ main a {
 }
 
 .shadow-glow-primary {
-	box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+	@apply shadow-[0_10px_40px] shadow-primary-500/30;
 }
 
 .shadow-glow-blue {
-	box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+	@apply shadow-[0_10px_40px] shadow-primary-500/30;
 }
 
 /* Glass morphism effect */

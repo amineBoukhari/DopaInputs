@@ -178,11 +178,11 @@ const { type, header, body, footer } = data
 		@apply mb-0 h-16 opacity-0 transition-all duration-300 [.pricing--monthly_&]:-translate-y-16 [.pricing--monthly_&]:opacity-100;
 	}
 	.pricing--featured {
-		@apply border-transparent text-white [&_.pricing\_\_header-subtitle]:text-blue-100;
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+		@apply border-transparent text-white [&_.pricing\_\_header-subtitle]:text-primary-100;
+		background: linear-gradient(135deg, theme('colors.primary.500') 0%, theme('colors.primary.500') 100%);
+		box-shadow: 0 20px 60px theme('colors.primary.500 / 0.3');
 	}
 	.pricing--featured:hover {
-		box-shadow: 0 30px 80px rgba(102, 126, 234, 0.4);
+		box-shadow: 0 30px 80px theme('colors.primary.500 / 0.4');
 	}
 </style>

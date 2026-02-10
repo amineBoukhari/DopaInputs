@@ -1,0 +1,375 @@
+---
+// Services Showcase
+// ------------
+// Description: Visual showcase of 4 key services with alternating layouts
+// Each section highlights one service with a large visual and result-oriented copy
+
+// Components
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+
+const services = [
+	{
+		id: 1,
+		title: 'Création & optimisation de site web BTP',
+		result: 'Attirez des prospects qualifiés et transformez vos visiteurs en clients potentiels.',
+		images: [
+			{ src: '/src/assets/pj1.png', alt: 'Site web BTP - Page d\'accueil' },
+			{ src: '/src/assets/pj2.png', alt: 'Site web BTP - Services' },
+			{ src: '/src/assets/pj3.png', alt: 'Site web BTP - Contact' }
+		],
+		imagePosition: 'right'
+	},
+	{
+		id: 2,
+		title: 'Publicité & génération de leads pour chantiers & visibilité locale BTP',
+		result: 'Recevez des demandes de devis et des projets directement depuis votre site.',
+		images: [
+			{ src: '/src/assets/google.png', alt: 'Campagne publicitaire Google Ads' },
+            { src: '/src/assets/googlemaps.png', alt: 'Campagne publicitaire Google Ads' },
+		
+		],
+		imagePosition: 'left'
+	},
+]
+---
+
+<Section id="services-showcase" classes="py-24 bg-white dark:bg-neutral-950">
+	<div class="max-w-7xl mx-auto px-4">
+		<!-- Section Header -->
+		<div class="text-center mb-20">
+			<h2 class="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4">
+				Nos services <span class="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">visuels</span>
+			</h2>
+			<p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+				Des solutions concrètes pour transformer votre présence digitale en machine à générer des chantiers
+			</p>
+		</div>
+
+		<!-- Services Grid -->
+		<div class="space-y-32">
+			{services.map((service, index) => (
+				<div class={`service-item ${index % 2 === 0 ? 'fade-in-right' : 'fade-in-left'}`}>
+					<Row classes="items-center gap-12">
+						{service.imagePosition === 'left' ? (
+							<>
+								<!-- Image Column (Left) - Carousel -->
+								<Col span="7" classes="relative">
+									<div class="carousel-container relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900" data-carousel={`carousel-${service.id}`}>
+										<div class="carousel-track aspect-[16/10] relative">
+											{service.images.map((img, imgIndex) => (
+												<div class={`carousel-slide ${imgIndex === 0 ? 'active' : ''} absolute inset-0 transition-opacity duration-500 `} style={imgIndex === 0 ? 'opacity: 1;' : 'opacity: 0;'}>
+													<img src={img.src} alt={img.alt} class="w-full object-cover my-auto" />
+												</div>
+											))}
+										</div>
+										
+										<!-- Carousel Controls -->
+										<button 
+											class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow-lg hover:bg-white dark:hover:bg-neutral-700 transition-all z-10 flex items-center justify-center group"
+											aria-label="Image précédente"
+										>
+											<svg class="w-5 h-5 text-neutral-700 dark:text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+											</svg>
+										</button>
+										<button 
+											class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow-lg hover:bg-white dark:hover:bg-neutral-700 transition-all z-10 flex items-center justify-center group"
+											aria-label="Image suivante"
+										>
+											<svg class="w-5 h-5 text-neutral-700 dark:text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+											</svg>
+										</button>
+										
+										<!-- Carousel Indicators -->
+										<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+											{service.images.map((_, imgIndex) => (
+												<button
+													class={`carousel-indicator w-2 h-2 rounded-full transition-all ${imgIndex === 0 ? 'bg-white w-6' : 'bg-white/50 hover:bg-white/75'}`}
+													data-index={imgIndex}
+													aria-label={`Aller à l'image ${imgIndex + 1}`}
+												></button>
+											))}
+										</div>
+									</div>
+									<!-- Decorative Elements -->
+									<div class="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-full blur-2xl -z-10"></div>
+									<div class="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-br from-secondary-500/20 to-warning-500/20 rounded-full blur-2xl -z-10"></div>
+								</Col>
+
+								<!-- Content Column (Right) -->
+								<Col span="5" classes="relative">
+									<div class="space-y-6">
+										<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-100 to-secondary-100 dark:from-primary-950 dark:to-secondary-950">
+											<span class="w-2 h-2 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600"></span>
+											<span class="text-sm font-semibold text-primary-700 dark:text-primary-400">Service {service.id}</span>
+										</div>
+										
+										<h3 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white leading-tight">
+											{service.title}
+										</h3>
+										
+										<div class="border-l-4 border-gradient-to-b from-primary-500 to-secondary-500 pl-6 py-2">
+											<p class="text-lg font-medium text-neutral-700 dark:text-neutral-300">
+												<span class="text-primary-600 dark:text-primary-400 font-semibold">Résultat : </span>
+												{service.result}
+											</p>
+										</div>
+									</div>
+								</Col>
+							</>
+						) : (
+							<>
+								<!-- Content Column (Left) -->
+								<Col span="5" classes="relative">
+									<div class="space-y-6">
+										<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-100 to-secondary-100 dark:from-primary-950 dark:to-secondary-950">
+											<span class="w-2 h-2 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600"></span>
+											<span class="text-sm font-semibold text-primary-700 dark:text-primary-400">Service {service.id}</span>
+										</div>
+										
+										<h3 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white leading-tight">
+											{service.title}
+										</h3>
+										
+										<div class="border-l-4 border-gradient-to-b from-primary-500 to-secondary-500 pl-6 py-2">
+											<p class="text-lg font-medium text-neutral-700 dark:text-neutral-300">
+												<span class="text-primary-600 dark:text-primary-400 font-semibold">Résultat : </span>
+												{service.result}
+											</p>
+										</div>
+									</div>
+								</Col>
+
+								<!-- Image Column (Right) - Carousel -->
+								<Col span="7" classes="relative">
+									<div class="carousel-container relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900" data-carousel={`carousel-${service.id}`}>
+										<div class="carousel-track aspect-[16/10] relative">
+											{service.images.map((img, imgIndex) => (
+												<div class={`carousel-slide ${imgIndex === 0 ? 'active' : ''} absolute inset-0 transition-opacity duration-500`} style={imgIndex === 0 ? 'opacity: 1;' : 'opacity: 0;'}>
+													<img src={img.src} alt={img.alt} class="w-fullo object-cover" />
+												</div>
+											))}
+										</div>
+										
+										<!-- Carousel Controls -->
+										<button 
+											class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow-lg hover:bg-white dark:hover:bg-neutral-700 transition-all z-10 flex items-center justify-center group"
+											aria-label="Image précédente"
+										>
+											<svg class="w-5 h-5 text-neutral-700 dark:text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+											</svg>
+										</button>
+										<button 
+											class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-neutral-800/90 shadow-lg hover:bg-white dark:hover:bg-neutral-700 transition-all z-10 flex items-center justify-center group"
+											aria-label="Image suivante"
+										>
+											<svg class="w-5 h-5 text-neutral-700 dark:text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+											</svg>
+										</button>
+										
+										<!-- Carousel Indicators -->
+										<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+											{service.images.map((_, imgIndex) => (
+												<button
+													class={`carousel-indicator w-2 h-2 rounded-full transition-all ${imgIndex === 0 ? 'bg-white w-6' : 'bg-white/50 hover:bg-white/75'}`}
+													data-index={imgIndex}
+													aria-label={`Aller à l'image ${imgIndex + 1}`}
+												></button>
+											))}
+										</div>
+									</div>
+									<!-- Decorative Elements -->
+									<div class="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-full blur-2xl -z-10"></div>
+									<div class="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-secondary-500/20 to-warning-500/20 rounded-full blur-2xl -z-10"></div>
+								</Col>
+							</>
+						)}
+					</Row>
+				</div>
+			))}
+		</div>
+	</div>
+</Section>
+
+<style>
+	.service-item {
+		opacity: 0;
+		animation: fadeInUp 0.8s ease-out forwards;
+	}
+
+	.service-item:nth-child(1) {
+		animation-delay: 0.1s;
+	}
+
+	.service-item:nth-child(2) {
+		animation-delay: 0.2s;
+	}
+
+	.service-item:nth-child(3) {
+		animation-delay: 0.3s;
+	}
+
+	.service-item:nth-child(4) {
+		animation-delay: 0.4s;
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Carousel Styles */
+	.carousel-container {
+		position: relative;
+	}
+
+	.carousel-track {
+		position: relative;
+	}
+
+	.carousel-slide {
+		position: absolute;
+		inset: 0;
+		transition: opacity 0.5s ease-in-out;
+	}
+
+	.carousel-slide.active {
+		opacity: 1;
+		z-index: 1;
+	}
+
+	.carousel-prev,
+	.carousel-next {
+		opacity: 0;
+		transition: all 0.3s ease;
+	}
+
+	.carousel-container:hover .carousel-prev,
+	.carousel-container:hover .carousel-next {
+		opacity: 1;
+	}
+
+	.carousel-indicator {
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	.carousel-indicator.active {
+		width: 1.5rem;
+		background-color: white;
+	}
+
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+		.service-item :global(.col) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		
+		.carousel-prev,
+		.carousel-next {
+			opacity: 1;
+		}
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const carousels = document.querySelectorAll('.carousel-container');
+		
+		carousels.forEach(carousel => {
+			const slides = carousel.querySelectorAll('.carousel-slide');
+			const prevBtn = carousel.querySelector('.carousel-prev');
+			const nextBtn = carousel.querySelector('.carousel-next');
+			const indicators = carousel.querySelectorAll('.carousel-indicator');
+			let currentIndex = 0;
+			let autoplayInterval: number | null = null;
+
+			function showSlide(index: number) {
+				slides.forEach((slide, i) => {
+					if (i === index) {
+						slide.classList.add('active');
+						(slide as HTMLElement).style.opacity = '1';
+					} else {
+						slide.classList.remove('active');
+						(slide as HTMLElement).style.opacity = '0';
+					}
+				});
+
+				indicators.forEach((indicator, i) => {
+					if (i === index) {
+						indicator.classList.add('active', 'w-6', 'bg-white');
+						indicator.classList.remove('bg-white/50');
+					} else {
+						indicator.classList.remove('active', 'w-6', 'bg-white');
+						indicator.classList.add('bg-white/50');
+					}
+				});
+
+				currentIndex = index;
+			}
+
+			function nextSlide() {
+				const next = (currentIndex + 1) % slides.length;
+				showSlide(next);
+			}
+
+			function prevSlide() {
+				const prev = (currentIndex - 1 + slides.length) % slides.length;
+				showSlide(prev);
+			}
+
+			function startAutoplay() {
+				autoplayInterval = window.setInterval(() => {
+					nextSlide();
+				}, 5000);
+			}
+
+			function stopAutoplay() {
+				if (autoplayInterval) {
+					clearInterval(autoplayInterval);
+					autoplayInterval = null;
+				}
+			}
+
+			// Event listeners
+			prevBtn?.addEventListener('click', () => {
+				prevSlide();
+				stopAutoplay();
+				startAutoplay();
+			});
+
+			nextBtn?.addEventListener('click', () => {
+				nextSlide();
+				stopAutoplay();
+				startAutoplay();
+			});
+
+			indicators.forEach((indicator, index) => {
+				indicator.addEventListener('click', () => {
+					showSlide(index);
+					stopAutoplay();
+					startAutoplay();
+				});
+			});
+
+			// Pause on hover
+			carousel.addEventListener('mouseenter', stopAutoplay);
+			carousel.addEventListener('mouseleave', startAutoplay);
+
+			// Start autoplay
+			startAutoplay();
+		});
+	});
+</script>

@@ -101,7 +101,7 @@ const savedNavActions = navActions.map((action) => ({
 			</ul>
 
 			<!-- Theme Switcher -->
-			<Switcher />
+			<!-- <Switcher /> -->
 
 			<!-- Navigation action buttons -->
 			<div class="header__actions">
@@ -147,14 +147,29 @@ const savedNavActions = navActions.map((action) => ({
 		@apply relative flex cursor-pointer flex-col items-stretch lg:flex-row;
 	}
 	.header__menu-link {
-		@apply relative flex items-center gap-1 py-4 transition-all duration-300 hover:text-blue-600 focus:text-blue-600 focus:outline-none focus-visible:outline-none lg:px-6;
+		@apply relative flex items-center gap-1 py-4 transition-all duration-300 hover:text-primary-600 focus:text-primary-600 focus:outline-none lg:px-6;
+	}
+
+	/* Remove default browser focus ring on mouse click, keep visible focus for keyboard */
+	.header__menu-link:focus , .header__logo:focus {
+		outline: none;
+		box-shadow: none;
+	}
+	.header__menu-link:focus:not(:focus-visible) {
+		outline: none;
+		box-shadow: none;
+	}
+	.header__menu-link:focus-visible {
+		outline: 2px solid theme('colors.primary.500');
+		outline-offset: 2px;
+		border-radius: 0.375rem;
 	}
 	.header__menu-link.active {
-		@apply text-blue-600 font-semibold;
+		@apply text-primary-600 font-semibold;
 	}
 	.header__menu-link.active::after {
 		content: '';
-		@apply absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full;
+		@apply absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full;
 	}
 	.header__menu-chevron {
 		@apply h-4 w-4 transition-transform [.header\_\_menu-item.open_&]:rotate-180;
@@ -166,7 +181,7 @@ const savedNavActions = navActions.map((action) => ({
 		@apply hidden [.header\_\_menu-item.open_&]:block;
 	}
 	.header__submenu-link {
-		@apply px-8 py-4 hover:text-blue-600 [.header\_\_menu-item.open_&]:flex;
+		@apply px-8 py-4 hover:text-primary-600 [.header\_\_menu-item.open_&]:flex;
 	}
 	.header__toggle {
 		@apply relative order-10 block h-10 w-10 self-center lg:hidden [&--open]:visible [&--open]:opacity-100;

@@ -1,97 +1,93 @@
-# Terms of Service
+## Conditions d'utilisation
 
-## Introduction
+### Introduction
 
-Welcome to Foxi! By using our services, you agree to be bound by these terms and conditions. Please read them carefully.
+Bienvenue chez Vitanorix. En utilisant nos services, vous acceptez d'être lié par ces conditions d'utilisation. Veuillez les lire attentivement.
 
-## Acceptance of Terms
+### Acceptation des conditions
 
-By accessing or using Foxi, you agree to comply with and be bound by these Terms of Service and our Privacy Policy. If you do not agree with these terms, you should not use our services.
+En accédant ou en utilisant Vitanorix, vous acceptez de respecter ces conditions d'utilisation ainsi que notre politique de confidentialité. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services.
 
-## Changes to Terms
+### Modifications des conditions
 
-We reserve the right to modify these terms at any time. We will notify you of any changes by posting the new terms on our website. Your continued use of the service after such changes constitutes your acceptance of the new terms.
+Nous nous réservons le droit de modifier ces conditions à tout moment. Nous vous informerons de tout changement en publiant la nouvelle version sur notre site. Votre utilisation continue du service constitue votre acceptation des modifications.
 
-## User Accounts
+### Comptes utilisateurs
 
-### Registration
+#### Inscription
 
-To use certain features of Foxi, you may need to create an account. You agree to provide accurate and complete information when creating your account and to keep this information up-to-date.
+Pour utiliser certaines fonctionnalités, vous devrez peut-être créer un compte. Vous vous engagez à fournir des informations exactes et à jour.
 
-### Account Security
+#### Sécurité du compte
 
-You are responsible for maintaining the confidentiality of your account and password. You agree to notify us immediately of any unauthorized use of your account.
+Vous êtes responsable de la confidentialité de vos identifiants. Vous devez nous informer immédiatement de toute utilisation non autorisée.
 
-## Use of Services
+### Utilisation du service
 
-### License
+#### Licence
 
-We grant you a limited, non-exclusive, non-transferable, and revocable license to use our services for personal or internal business purposes.
+Nous vous accordons une licence limitée, non exclusive et révocable pour utiliser nos services à des fins personnelles ou professionnelles internes.
 
-### Prohibited Activities
+#### Activités interdites
 
-You agree not to use Foxi for any unlawful or prohibited activities, including but not limited to:
+Vous vous engagez à ne pas utiliser nos services pour des activités illégales ou interdites, notamment :
 
-- Violating any applicable laws or regulations
-- Infringing on the intellectual property rights of others
-- Uploading or distributing viruses or malicious code
-- Interfering with the operation of the service
+- Violer des lois applicables
+- Porter atteinte aux droits de propriété intellectuelle d'autrui
+- Distribuer des virus ou du code malveillant
+- Perturber le fonctionnement du service
 
-## Content
+### Contenu
 
-### Your Content
+#### Votre contenu
 
-You retain ownership of any content you upload to Foxi. By uploading content, you grant us a worldwide, royalty-free, and non-exclusive license to use, reproduce, and display your content for the purpose of operating and improving the service.
+Vous conservez la propriété du contenu que vous téléversez. En téléversant du contenu, vous nous accordez une licence mondiale, gratuite et non exclusive pour utiliser et afficher ce contenu afin d'exploiter et d'améliorer le service.
 
-### Our Content
+#### Notre contenu
 
-All content provided by Foxi, including text, graphics, logos, and software, is the property of Foxi or its licensors and is protected by intellectual property laws. You may not use, reproduce, or distribute any of our content without our prior written permission.
+Tout le contenu fourni par Vitanorix (textes, logos, images, logiciels) est protégé par le droit de la propriété intellectuelle et appartient à Vitanorix ou à ses licenciés.
 
-## Payment and Billing
+### Paiement et facturation
 
-### Subscription Fees
+#### Abonnements
 
-Certain features of Foxi may require a subscription. You agree to pay all applicable fees as described on our pricing page. Fees are non-refundable except as required by law.
+Certaines fonctionnalités peuvent nécessiter un abonnement. Vous acceptez de payer les frais applicables tels que décrits sur notre page Tarifs.
 
-### Billing Information
+#### Informations de facturation
 
-You must provide accurate and up-to-date billing information. You authorize us to charge your payment method for the subscription fees.
+Vous devez fournir des informations de facturation exactes et à jour et autoriser les paiements des frais d'abonnement.
 
-## Termination
+### Résiliation
 
-We may terminate or suspend your account and access to Foxi at any time, without prior notice, for conduct that we believe violates these terms or is harmful to other users of the service.
+Nous pouvons résilier ou suspendre votre compte à tout moment si vous enfreignez ces conditions ou pour tout autre motif légitime.
 
-## Disclaimer of Warranties
+### Exonération de garanties
 
-Foxi is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the service will be uninterrupted or error-free.
+Les services sont fournis "tels quels" sans garantie explicite. Nous ne garantissons pas l'absence d'erreurs ou d'interruptions.
 
-## Limitation of Liability
+### Limitation de responsabilité
 
-To the maximum extent permitted by law, Foxi shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of the service.
+Dans la mesure permise par la loi, Vitanorix ne pourra être tenu responsable des dommages indirects ou consécutifs résultant de l'utilisation du service.
 
-## Governing Law
+### Droit applicable
 
-These terms are governed by and construed in accordance with the laws of the jurisdiction in which Foxi operates, without regard to its conflict of law principles.
+Ces conditions sont régies par les lois applicables au siège de Vitanorix.
 
-## Contact Information
+### Informations de contact
 
-If you have any questions about these Terms of Service, please contact us at:
+Pour toute question concernant ces conditions, contactez-nous :
 
-Email: support@foxi.com
-Address: 123 Foxi Lane, Productivity City, PC 12345
+Email: amine.boukhari@vitanorix.com
+Adresse: Villeneuve-d'Ascq , 59650 Lille France
 
-## Miscellaneous
+### Divers
 
-### Entire Agreement
+#### Accord complet
 
-These terms constitute the entire agreement between you and Foxi regarding the use of the service and supersede any prior agreements.
+Ces conditions constituent l'intégralité de l'accord entre vous et Vitanorix concernant l'utilisation du service.
 
-### Severability
+#### Nullité partielle
 
-If any provision of these terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect.
+Si une disposition est jugée invalide, les autres dispositions restent en vigueur.
 
-### Waiver
-
-Our failure to enforce any right or provision of these terms will not be considered a waiver of those rights.
-
-_Last updated: July 10, 2024_
+Dernière mise à jour : février 2026

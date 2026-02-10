@@ -1,0 +1,72 @@
+---
+// FAQ Section for BTP
+// ------------
+// Description: FAQ section with questions about BTP services
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+import Accordion from '../../ui/Accordion.astro'
+import Card from '../../ui/cards/partials/Card.astro'
+
+const faqs = [
+	{
+		question: "J'ai déjà un site web, pourquoi en refaire un ?",
+		answer: "Même si votre site existe, il peut ne pas générer de leads. Nous optimisons ou refaisons votre site pour qu'il attire et convertisse réellement vos prospects. Un site qui ne génère pas de contacts est une opportunité manquée chaque jour."
+	},
+	{
+		question: "Combien de temps avant de voir des résultats ?",
+		answer: "Selon le pack choisi, vous pouvez commencer à recevoir des leads qualifiés et des demandes de devis dès le premier mois. Pour le SEO, les résultats optimaux apparaissent généralement entre 3 et 6 mois."
+	},
+	{
+		question: "Est-ce adapté aux petites entreprises ou uniquement aux grandes sociétés ?",
+		answer: "Nos solutions sont conçues pour toutes les entreprises BTP, qu'il s'agisse d'artisans, de PME ou de plus grandes structures. Nous adaptons nos services à votre budget et vos objectifs."
+	},
+	{
+		question: "Je n'y connais rien en marketing digital, est-ce compliqué ?",
+		answer: "Pas du tout. Nous gérons tout pour vous, du site à la génération de leads, avec un suivi simple et clair via un tableau de bord. Vous n'avez qu'à vous concentrer sur vos chantiers."
+	},
+	{
+		question: "Puis-je choisir un service à la carte ?",
+		answer: "Oui, vous pouvez commencer avec un site simple et ajouter la génération de leads, SEO ou dashboards plus tard. Nous vous accompagnons dans votre croissance progressive."
+	}
+]
+---
+
+<Section id="faq" classes="bg-gradient-to-b from-white via-neutral-50/50 to-white dark:from-neutral-950 dark:via-neutral-900/50 dark:to-neutral-950 relative overflow-hidden py-20">
+	<!-- Decorative elements -->
+	<div class="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-primary-400/10 to-secondary-400/10 rounded-full blur-3xl"></div>
+	<div class="absolute bottom-20 left-10 w-72 h-72 bg-gradient-to-br from-accent-400/10 to-warning-400/10 rounded-full blur-3xl"></div>
+	
+	<Row>
+		<Col span="12" align="center" classes="mb-12 max-w-4xl mx-auto relative z-10">
+			<span class="inline-block px-5 py-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full text-sm font-semibold mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+				FAQ
+			</span>
+			<h2 class="text-4xl md:text-5xl">
+				Vos questions sur nos services BTP, <strong class="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">répondues</strong>
+			</h2>
+			<p class="pb-0 text-lg text-neutral-600 dark:text-neutral-400">
+				Tout ce que vous devez savoir avant de commencer à générer plus de chantiers et de clients.
+			</p>
+		</Col>
+	</Row>
+	
+	<Row>
+		<Col span="2" />
+		<Col span="8">
+			<Card classes="divide-y divide-neutral-100 dark:divide-neutral-800 shadow-xl">
+				{faqs.map((faq, index) => (
+					<Accordion
+						title={faq.question}
+						text={faq.answer}
+						open={index === 0}
+					/>
+				))}
+			</Card>
+		</Col>
+		<Col span="2" />
+	</Row>
+</Section>

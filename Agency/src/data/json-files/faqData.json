@@ -1,103 +1,103 @@
 [
 	{
-		"question": "What is the cost of the basic plan?",
-		"reply": "The basic plan is $9.99 per month, which includes access to core features and limited integrations. This plan is perfect for individuals or small teams looking to improve their productivity without a large investment.",
+		"question": "Quel est le coût de la formule de base ?",
+		"reply": "La formule de base est à partir de 99€ par mois, qui inclut l'accès aux fonctionnalités essentielles et à la création de site web BTP optimisé. Cette formule est parfaite pour les artisans ou petites entreprises BTP cherchant à améliorer leur présence en ligne sans gros investissement.",
 		"category": "pricing",
 		"open": true
 	},
 	{
-		"question": "Are there any discounts for annual subscriptions?",
-		"reply": "Yes, we offer a 20% discount on annual subscriptions for all our plans. By choosing an annual subscription, you can save money and ensure uninterrupted access to all Foxi features for the entire year.",
+		"question": "Y a-t-il des remises pour les abonnements annuels ?",
+		"reply": "Oui, nous offrons une remise de 15% sur les abonnements annuels pour toutes nos formules. En choisissant un abonnement annuel, vous économisez de l'argent et assurez un accès ininterrompu à tous les services Vitanorix pour l'année entière.",
 		"category": "pricing",
 		"open": false
 	},
 	{
-		"question": "Can I change my subscription plan at any time?",
-		"reply": "Yes, you can upgrade or downgrade your subscription plan at any time from your account settings. This flexibility allows you to adjust your plan based on your changing needs and usage.",
+		"question": "Puis-je changer de formule d'abonnement à tout moment ?",
+		"reply": "Oui, vous pouvez passer à une formule supérieure ou inférieure à tout moment depuis les paramètres de votre compte. Cette flexibilité vous permet d'ajuster votre formule en fonction de l'évolution de vos besoins et de votre utilisation.",
 		"category": "pricing",
 		"open": false
 	},
 	{
-		"question": "Is there a free trial available?",
-		"reply": "Yes, we offer a 14-day free trial for all new users. During the trial, you can explore all the features of Foxi without any commitment, allowing you to see how it fits into your workflow.",
+		"question": "Y a-t-il un essai gratuit disponible ?",
+		"reply": "Oui, nous offrons un diagnostic gratuit de 15-30 minutes pour tous les nouveaux clients. Pendant cet échange, vous pourrez découvrir comment Vitanorix peut transformer votre site en générateur de chantiers, sans aucun engagement.",
 		"category": "pricing",
 		"open": false
 	},
 	{
-		"question": "Do you offer refunds?",
-		"reply": "We offer a 30-day money-back guarantee if you are not satisfied with our service. Simply contact our support team within 30 days of your purchase, and we'll process your refund.",
+		"question": "Proposez-vous des remboursements ?",
+		"reply": "Nous offrons une garantie satisfait ou remboursé de 30 jours si vous n'êtes pas satisfait de notre service. Contactez simplement notre équipe de support dans les 30 jours suivant votre achat, et nous traiterons votre remboursement.",
 		"category": "pricing",
 		"open": false
 	},
 	{
-		"question": "How do I cancel my subscription?",
-		"reply": "You can cancel your subscription from your account settings at any time. After cancellation, you will still have access to your account until the end of the billing cycle.",
+		"question": "Comment puis-je annuler mon abonnement ?",
+		"reply": "Vous pouvez annuler votre abonnement depuis les paramètres de votre compte à tout moment. Après l'annulation, vous aurez toujours accès à votre compte jusqu'à la fin du cycle de facturation.",
 		"category": "pricing",
 		"open": false
 	},
 	{
-		"question": "Can I use Foxi with Google Calendar?",
-		"reply": "Yes, Foxi integrates seamlessly with Google Calendar for easy scheduling and task management. This integration helps you keep track of your events and tasks in one place.",
+		"question": "Puis-je utiliser Vitanorix avec Google My Business ?",
+		"reply": "Oui, Vitanorix s'intègre parfaitement avec Google My Business pour optimiser votre visibilité locale. Cette intégration vous aide à améliorer votre positionnement sur Google Maps et dans les recherches locales BTP.",
 		"category": "integrations",
 		"open": true
 	},
 	{
-		"question": "Does Foxi work with Slack?",
-		"reply": "Yes, you can integrate Foxi with Slack to receive notifications and updates directly in your channels. This allows you to stay informed about your projects without leaving Slack.",
+		"question": "Vitanorix fonctionne-t-il avec Google Analytics ?",
+		"reply": "Oui, vous pouvez intégrer Vitanorix avec Google Analytics pour suivre vos visiteurs et conversions en temps réel. Cela vous permet de rester informé sur les performances de votre site et l'origine de vos leads.",
 		"category": "integrations",
 		"open": false
 	},
 	{
-		"question": "How do I connect Foxi with Trello?",
-		"reply": "To connect Foxi with Trello, go to the integrations page in your settings and follow the instructions to link your accounts. This integration helps you manage your Trello boards and Foxi projects together.",
+		"question": "Comment connecter Vitanorix avec Google Ads ?",
+		"reply": "Pour connecter Vitanorix avec Google Ads, notre équipe configure l'intégration lors de la mise en place de vos campagnes publicitaires. Cette intégration vous aide à suivre vos campagnes et gérer vos leads BTP efficacement.",
 		"category": "integrations",
 		"open": false
 	},
 	{
-		"question": "Is there an API for custom integrations?",
-		"reply": "Yes, we provide an API that allows you to create custom integrations with Foxi. Our API documentation provides detailed instructions and examples to help you get started.",
+		"question": "Y a-t-il une API pour des intégrations personnalisées ?",
+		"reply": "Oui, nous fournissons une API qui vous permet de créer des intégrations personnalisées avec Vitanorix. Notre documentation API fournit des instructions détaillées et des exemples pour vous aider à démarrer.",
 		"category": "integrations",
 		"open": false
 	},
 	{
-		"question": "Can I sync Foxi with my email?",
-		"reply": "Currently, we do not support email integration, but this feature is on our roadmap for future releases. Stay tuned for updates as we continue to enhance Foxi's capabilities.",
+		"question": "Puis-je synchroniser Vitanorix avec ma messagerie email ?",
+		"reply": "Oui, nous proposons une intégration email pour recevoir des notifications instantanées lorsqu'un nouveau lead arrive. Vous recevrez tous les détails de la demande directement dans votre boîte mail.",
 		"category": "integrations",
 		"open": false
 	},
 	{
-		"question": "Does Foxi support Zapier?",
-		"reply": "Yes, Foxi integrates with Zapier, allowing you to connect with over 2,000 apps and automate your workflows. This integration helps you streamline your processes and improve efficiency.",
+		"question": "Vitanorix supporte-t-il les CRM comme Salesforce ?",
+		"reply": "Oui, Vitanorix peut s'intégrer avec les principaux CRM du marché, vous permettant de connecter plus de 2 000 applications et automatiser vos workflows. Cette intégration vous aide à rationaliser vos processus et améliorer l'efficacité.",
 		"category": "integrations",
 		"open": false
 	},
 	{
-		"question": "What are the main features of Foxi?",
-		"reply": "Foxi includes in-app messaging, project management, time tracking, customizable dashboards, and more. These features are designed to help you stay organized, communicate effectively, and manage your time efficiently.",
+		"question": "Quelles sont les principales fonctionnalités de Vitanorix ?",
+		"reply": "Vitanorix inclut la création de site web BTP optimisé, la génération de leads via publicité Google, le SEO local, un dashboard de gestion des leads, et plus encore. Ces fonctionnalités sont conçues pour vous aider à générer des chantiers, communiquer efficacement avec vos prospects et gérer votre activité efficacement.",
 		"category": "features",
 		"open": true
 	},
 	{
-		"question": "How do I use the in-app messaging feature?",
-		"reply": "In-app messaging allows you to communicate with your team directly within Foxi. Simply navigate to the messaging tab to start a conversation. You can send messages, share files, and create group chats.",
+		"question": "Comment fonctionne la génération de leads ?",
+		"reply": "La génération de leads Vitanorix utilise Google Ads et le SEO local pour attirer des clients potentiels vers votre site. Les visiteurs remplissent un formulaire de contact, et vous recevez instantanément leurs coordonnées et détails du projet. Vous pouvez ensuite les contacter directement.",
 		"category": "features",
 		"open": false
 	},
 	{
-		"question": "Can I customize my dashboard?",
-		"reply": "Yes, you can customize your dashboard by adding, removing, and rearranging widgets to fit your workflow. This customization helps you keep important information at your fingertips.",
+		"question": "Puis-je personnaliser mon dashboard ?",
+		"reply": "Oui, vous pouvez personnaliser votre dashboard en ajoutant, supprimant et réorganisant les widgets pour s'adapter à votre flux de travail. Cette personnalisation vous aide à garder les informations importantes à portée de main.",
 		"category": "features",
 		"open": false
 	},
 	{
-		"question": "How does the time tracking feature work?",
-		"reply": "Time tracking allows you to log the time spent on tasks and projects. Start the timer when you begin a task and stop it when you're done. You can also manually log time if needed.",
+		"question": "Comment fonctionne le suivi des chantiers ?",
+		"reply": "Le suivi des chantiers vous permet de logger le temps passé sur les tâches et projets. Suivez l'avancement de vos devis, des leads aux chantiers confirmés. Vous pouvez également ajouter manuellement des informations si nécessaire.",
 		"category": "features",
 		"open": false
 	},
 	{
-		"question": "Is there a mobile app for Foxi?",
-		"reply": "Yes, Foxi is available on both iOS and Android, allowing you to manage your tasks and projects on the go. Download the app from the App Store or Google Play to stay productive anywhere.",
+		"question": "Y a-t-il une application mobile pour Vitanorix ?",
+		"reply": "Oui, le dashboard Vitanorix est accessible depuis n'importe quel appareil mobile via votre navigateur web. Cela vous permet de gérer vos leads et chantiers en déplacement, directement depuis votre smartphone ou tablette.",
 		"category": "features",
 		"open": false
 	}

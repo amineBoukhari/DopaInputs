@@ -1,0 +1,235 @@
+---
+// Case Studies / Réalisations Page
+// ------------
+// Description: Case studies page showcasing client results
+
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import Button from '../components/ui/Button.astro'
+import FinalCTA from '../components/blocks/CTA/FinalCTA.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Études de Cas | Résultats Concrets pour nos Clients BTP',
+	description:
+		'Découvrez comment nous transformons des sites web et stratégies marketing en générateurs de projets BTP. Exemples concrets et résultats mesurables.'
+}
+
+const caseStudies = [
+	{
+		id: 'tsplus',
+		client: 'TSPlus',
+		industry: 'Solutions Logicielles B2B',
+		badge: 'Étude de cas principale',
+		problem: 'Le site existant ne générait pas de leads. Les visiteurs n\'avaient aucune action claire à réaliser et quittaient le site sans convertir.',
+		solution: 'Optimisation complète du site avec un funnel de conversion efficace, des call-to-action clairs et une stratégie de contenu orientée résultats.',
+		results: [
+			{ metric: '+200%', label: 'Demandes de contact en 30 jours' },
+			{ metric: '5x', label: 'ROI sur investissement' },
+			{ metric: '30j', label: 'Pour premiers résultats' },
+			{ metric: '24/7', label: 'Génération de leads automatique' }
+		],
+		detailedResults: [
+			'Leads qualifiés transformés en projets concrets',
+			'Process simplifié pour gérer et suivre les prospects',
+			'Augmentation significative du taux de conversion',
+			'Réduction du coût d\'acquisition client'
+		],
+		featured: true
+	},
+	{
+		id: 'construction-martin',
+		client: 'Construction Martin',
+		industry: 'Entreprise de Construction',
+		badge: 'BTP - Construction',
+		problem: 'Aucune présence digitale. L\'entreprise dépendait uniquement du bouche-à-oreille et des recommandations, limitant sa croissance.',
+		solution: 'Création d\'un site web professionnel avec portfolio de réalisations, optimisation SEO locale et mise en place de campagnes Google Ads ciblées.',
+		results: [
+			{ metric: '+150%', label: 'Demandes de devis' },
+			{ metric: '12', label: 'Nouveaux chantiers/mois' },
+			{ metric: '#1', label: 'Position Google locale' },
+			{ metric: '3x', label: 'Chiffre d\'affaires' }
+		],
+		detailedResults: [
+			'Visibilité locale multipliée par 5',
+			'Pipeline de projets rempli 3 mois à l\'avance',
+			'Réduction de la dépendance au bouche-à-oreille',
+			'Image professionnelle renforcée'
+		],
+		featured: false
+	},
+	{
+		id: 'renovations-dupont',
+		client: 'Rénovations Dupont',
+		industry: 'Rénovation Intérieure',
+		badge: 'BTP - Rénovation',
+		problem: 'Site web obsolète qui ne reflétait pas la qualité du travail. Difficulté à se démarquer de la concurrence locale.',
+		solution: 'Refonte complète avec galerie photos avant/après, témoignages clients, formulaire de demande de devis intelligent et SEO local optimisé.',
+		results: [
+			{ metric: '+300%', label: 'Trafic organique' },
+			{ metric: '8', label: 'Devis qualifiés/semaine' },
+			{ metric: '45%', label: 'Taux de conversion' },
+			{ metric: '2x', label: 'Panier moyen' }
+		],
+		detailedResults: [
+			'Clients mieux qualifiés dès le premier contact',
+			'Réduction du temps passé en prospection',
+			'Augmentation du panier moyen par projet',
+			'Meilleure réputation en ligne'
+		],
+		featured: false
+	}
+]
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<!-- Hero Section -->
+	<Section id="case-studies-hero" classes="bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 dark:from-neutral-950 dark:via-secondary-950 dark:to-accent-950 relative overflow-hidden py-20">
+		<div class="absolute inset-0 overflow-hidden pointer-events-none">
+			<div class="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-primary-400/20 to-accent-400/20 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-secondary-400/20 to-warning-400/20 rounded-full blur-3xl"></div>
+		</div>
+		
+		<Row>
+			<Col span="12" align="center" classes="relative z-10">
+				<span class="inline-block px-5 py-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full text-sm font-semibold mb-4 shadow-lg">
+					ÉTUDES DE CAS
+				</span>
+				<h1 class="text-4xl md:text-5xl lg:text-6xl max-w-4xl mx-auto">
+					Exemples concrets de <strong class="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">résultats pour nos clients</strong>
+				</h1>
+				<p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto mt-6">
+					Découvrez comment nous transformons des sites web et stratégies marketing en générateurs de projets BTP.
+				</p>
+			</Col>
+		</Row>
+	</Section>
+	
+	<!-- Case Studies -->
+	{caseStudies.map((study, index) => (
+		<Section 
+			id={study.id}
+			classes={`py-20 ${study.featured ? 'bg-gradient-to-br from-neutral-900 via-secondary-950 to-neutral-900 text-white' : index % 2 === 0 ? 'bg-white dark:bg-neutral-950' : 'bg-gradient-to-b from-primary-50/50 to-white dark:from-neutral-900 dark:to-neutral-950'}`}
+		>
+			<Row>
+				<Col span="12">
+					<div class="max-w-6xl mx-auto">
+						<!-- Badge -->
+						<div class="text-center mb-8">
+							<span class={`inline-block px-4 py-2 rounded-full text-sm font-medium ${study.featured ? 'bg-gradient-to-r from-warning-400 to-warning-400 text-neutral-900' : 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'}`}>
+								{study.badge}
+							</span>
+						</div>
+						
+						<div class={`rounded-3xl overflow-hidden ${study.featured ? 'bg-white/5 backdrop-blur-sm border border-white/10' : 'bg-white dark:bg-neutral-900 shadow-xl border border-neutral-200 dark:border-neutral-800'}`}>
+							<div class="grid md:grid-cols-2">
+								<!-- Left: Problem & Solution -->
+								<div class="p-8 md:p-12">
+									<div class="mb-2">
+										<span class={`text-sm font-medium ${study.featured ? 'text-primary-300' : 'text-primary-600 dark:text-primary-400'}`}>
+											{study.industry}
+										</span>
+									</div>
+									<h2 class={`text-3xl md:text-4xl font-bold mb-8 ${study.featured ? 'text-white' : 'text-neutral-900 dark:text-white'}`}>
+										{study.client}
+									</h2>
+									
+									<!-- Problem -->
+									<div class="mb-8">
+										<div class="flex items-center gap-3 mb-3">
+											<div class={`w-10 h-10 rounded-xl flex items-center justify-center ${study.featured ? 'bg-error-500/20' : 'bg-error-100 dark:bg-error-900/30'}`}>
+												<svg class="w-5 h-5 text-error-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+												</svg>
+											</div>
+											<h3 class={`text-xl font-bold ${study.featured ? 'text-white' : 'text-neutral-900 dark:text-white'}`}>Problème</h3>
+										</div>
+										<p class={study.featured ? 'text-neutral-300' : 'text-neutral-600 dark:text-neutral-400'}>
+											{study.problem}
+										</p>
+									</div>
+									
+									<!-- Solution -->
+									<div class="mb-8">
+										<div class="flex items-center gap-3 mb-3">
+											<div class={`w-10 h-10 rounded-xl flex items-center justify-center ${study.featured ? 'bg-primary-500/20' : 'bg-primary-100 dark:bg-primary-900/30'}`}>
+												<svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+												</svg>
+											</div>
+											<h3 class={`text-xl font-bold ${study.featured ? 'text-white' : 'text-neutral-900 dark:text-white'}`}>Solution</h3>
+										</div>
+										<p class={study.featured ? 'text-neutral-300' : 'text-neutral-600 dark:text-neutral-400'}>
+											{study.solution}
+										</p>
+									</div>
+									
+									<!-- Detailed Results -->
+									<div>
+										<div class="flex items-center gap-3 mb-3">
+											<div class={`w-10 h-10 rounded-xl flex items-center justify-center ${study.featured ? 'bg-success-500/20' : 'bg-success-100 dark:bg-success-900/30'}`}>
+												<svg class="w-5 h-5 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+												</svg>
+											</div>
+											<h3 class={`text-xl font-bold ${study.featured ? 'text-white' : 'text-neutral-900 dark:text-white'}`}>Résultats détaillés</h3>
+										</div>
+										<ul class="space-y-2">
+											{study.detailedResults.map((result) => (
+												<li class="flex items-start gap-2">
+													<svg class="w-4 h-4 text-success-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+														<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+													</svg>
+													<span class={study.featured ? 'text-neutral-300' : 'text-neutral-600 dark:text-neutral-400'}>
+														{result}
+													</span>
+												</li>
+											))}
+										</ul>
+									</div>
+								</div>
+								
+								<!-- Right: Stats -->
+								<div class={`p-8 md:p-12 ${study.featured ? 'bg-gradient-to-br from-primary-600/20 to-accent-600/20' : 'bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20'}`}>
+									<h3 class={`text-lg font-bold mb-6 ${study.featured ? 'text-white' : 'text-neutral-900 dark:text-white'}`}>
+										Résultats chiffrés
+									</h3>
+									<div class="grid grid-cols-2 gap-4">
+										{study.results.map((result) => (
+											<div class={`rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105 ${study.featured ? 'bg-white/10 backdrop-blur-sm hover:bg-white/15' : 'bg-white dark:bg-neutral-800 shadow-md'}`}>
+												<div class={`text-3xl md:text-4xl font-bold mb-2 ${study.featured ? 'bg-gradient-to-r from-primary-300 to-secondary-300 bg-clip-text text-transparent' : 'bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent'}`}>
+													{result.metric}
+												</div>
+												<p class={`text-sm ${study.featured ? 'text-neutral-300' : 'text-neutral-600 dark:text-neutral-400'}`}>
+													{result.label}
+												</p>
+											</div>
+										))}
+									</div>
+									
+									<div class="mt-8">
+										<Button 
+											size="lg" 
+											link="/contact" 
+											classes={`w-full justify-center ${study.featured ? 'bg-white text-primary-600 hover:bg-primary-50' : ''}`}
+										>
+											Voir comment nous pouvons faire pareil pour vous
+										</Button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</Col>
+			</Row>
+		</Section>
+	))}
+	
+	<FinalCTA />
+</Layout>

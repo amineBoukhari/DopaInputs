@@ -1,0 +1,62 @@
+---
+// Contact Form BTP
+// ------------
+// Description: A contact form with French labels for BTP clients
+
+// Components
+// - UI
+import Card from '../../ui/cards/partials/Card.astro'
+import CardBody from '../../ui/cards/partials/CardBody.astro'
+import Form from '../../ui/forms/Form.astro'
+import FormField from '../../ui/forms/partials/FormField.astro'
+import InputField from '../../ui/forms/form-elements/InputField.astro'
+import TextArea from '../../ui/forms/form-elements/TextArea.astro'
+import Button from '../../ui/Button.astro'
+
+// Props
+type Props = {
+	classes?: string
+}
+const { classes } = Astro.props
+---
+
+<Card classes={classes}>
+	<CardBody>
+		<Form>
+			<h2 class="text-2xl font-bold mb-2">Envoyez votre demande</h2>
+			<p class="text-neutral-600 dark:text-neutral-400 mb-6 text-sm">Nous vous répondons sous 24h</p>
+			<FormField>
+				<InputField type="text" id="nom" label="Nom complet" required />
+			</FormField>
+			<FormField>
+				<InputField type="email" id="email" label="Email" required />
+			</FormField>
+			<FormField>
+				<InputField type="tel" id="telephone" label="Téléphone" />
+			</FormField>
+			<FormField>
+				<label for="typeProjet" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+					Type de projet / Besoin
+				</label>
+				<select 
+					id="typeProjet" 
+					name="typeProjet"
+					class="w-full px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+				>
+					<option value="">Sélectionnez une option</option>
+					<option value="creation-site">Création de site web BTP</option>
+					<option value="optimisation-site">Optimisation de site existant</option>
+					<option value="generation-leads">Génération de leads / Publicité</option>
+					<option value="seo-local">SEO / Visibilité locale</option>
+					<option value="dashboard">Dashboard / Gestion de leads</option>
+					<option value="pack-complet">Pack complet (Site + Leads + SEO)</option>
+					<option value="autre">Autre</option>
+				</select>
+			</FormField>
+			<FormField>
+				<TextArea id="message" label="Décrivez votre projet (optionnel)" />
+			</FormField>
+			<Button style="primary" type="submit" classes="w-full justify-center">Envoyer ma demande</Button>
+		</Form>
+	</CardBody>
+</Card>

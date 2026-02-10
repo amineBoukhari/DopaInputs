@@ -17,7 +17,7 @@ type Props = {
 const { elevated, radius = 'rounded', classes } = Astro.props
 ---
 
-<div class:list={['chip', { ['chip--elevated']: elevated }, { [`${classes}`]: classes }, radius]}>
+<div class:list={['chip shadow-glow-primary', { ['chip--elevated shadow-glow-primary']: elevated }, { [`${classes}`]: classes }, radius]}>
 	<slot name="button" />
 	<span class="chip--body">
 		<slot />
@@ -31,11 +31,13 @@ const { elevated, radius = 'rounded', classes } = Astro.props
 		border-width: 1px;
 		border-color: rgb(229 229 229);
 		background-color: rgb(255 255 255 / 0.5);
-		padding-left: 0.125rem;
-		padding-right: 0.125rem;
 		padding-top: 0.125rem;
 		padding-bottom: 0.125rem;
 		color: rgb(115 115 115);
+		padding: 12px;
+		margin-bottom: 15px;
+		font-weight: 700px;
+		border-radius: 6px;
 	}
 	
 	:global(.dark) .chip {
@@ -61,6 +63,6 @@ const { elevated, radius = 'rounded', classes } = Astro.props
 	
 	.chip--body :global(strong) {
 		padding-right: 0.25rem;
-		font-weight: 700;
+		font-weight: 00;
 	}
 </style>

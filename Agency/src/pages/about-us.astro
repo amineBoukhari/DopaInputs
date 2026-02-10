@@ -1,0 +1,245 @@
+---
+// À Propos / About Page
+// ------------
+// Description: About us page for BTP agency
+
+// Components
+// - Layout
+import Layout from '../layouts/Layout.astro'
+// - UI
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import Button from '../components/ui/Button.astro'
+import FinalCTA from '../components/blocks/CTA/FinalCTA.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'À Propos | Qui Sommes-Nous | Vitanorix',
+	description:
+		'Une agence web spécialisée dans le BTP, orientée résultats et génération de leads qualifiés. Découvrez notre mission et notre approche.'
+}
+
+const values = [
+	{
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+		</svg>`,
+		title: 'Résultats Concrets',
+		description: 'Nous mesurons notre succès par vos résultats : leads générés, chantiers signés, chiffre d\'affaires augmenté.'
+	},
+	{
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+		</svg>`,
+		title: 'Partenariat Long Terme',
+		description: 'Nous construisons des relations durables avec nos clients, évoluant ensemble au fil de votre croissance.'
+	},
+	{
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+		</svg>`,
+		title: 'Expertise BTP',
+		description: 'Spécialisés dans le secteur du BTP, nous comprenons vos défis et savons ce qui fonctionne pour votre industrie.'
+	},
+	{
+		icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+		</svg>`,
+		title: 'Transparence Totale',
+		description: 'Rapports clairs, communication directe, et suivi en temps réel de vos performances.'
+	}
+]
+
+const stats = [
+	{ number: '+500', label: 'Projets réalisés' },
+	{ number: '+200%', label: 'Augmentation moyenne des leads' },
+	{ number: '98%', label: 'Clients satisfaits' },
+	{ number: '10+', label: 'Années d\'expérience' }
+]
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<!-- Hero Section -->
+	<Section id="about-hero" classes="bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 dark:from-neutral-950 dark:via-secondary-950 dark:to-accent-950 relative overflow-hidden py-20">
+		<div class="absolute inset-0 overflow-hidden pointer-events-none">
+			<div class="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-primary-400/20 to-accent-400/20 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-secondary-400/20 to-warning-400/20 rounded-full blur-3xl"></div>
+		</div>
+		
+		<Row>
+			<Col span="12" align="center" classes="relative z-10">
+				<span class="inline-block px-5 py-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full text-sm font-semibold mb-4 shadow-lg">
+					À PROPOS DE NOUS
+				</span>
+				<h1 class="text-4xl md:text-5xl lg:text-6xl max-w-4xl mx-auto">
+					Qui sommes-nous et pourquoi nous aidons les <strong class="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">entreprises BTP</strong>
+				</h1>
+				<p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto mt-6">
+					Une agence web spécialisée dans le BTP, orientée résultats et génération de leads qualifiés.
+				</p>
+			</Col>
+		</Row>
+	</Section>
+	
+	<!-- Mission Section -->
+	<Section id="mission" classes="py-20 bg-white dark:bg-neutral-950">
+		<Row>
+			<Col span="12">
+				<div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+					<!-- Content -->
+					<div>
+						<span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium mb-4">
+							Notre Mission
+						</span>
+						<h2 class="text-3xl md:text-4xl font-bold mb-6 text-neutral-900 dark:text-white">
+							Aider les entreprises BTP à décrocher plus de chantiers
+						</h2>
+						<p class="text-neutral-600 dark:text-neutral-400 mb-6 text-lg">
+							Nous avons une mission simple : transformer votre présence digitale en un véritable générateur de clients et de projets. Que vous ayez déjà un site ou que vous partiez de zéro, nous vous accompagnons vers le succès.
+						</p>
+						<p class="text-neutral-600 dark:text-neutral-400 mb-8">
+							Avec des années d'expérience dans le marketing digital et une spécialisation dans le secteur du BTP, nous comprenons vos défis uniques : la concurrence locale, le besoin de montrer vos réalisations, et l'importance de générer des leads qualifiés qui se transforment en vrais projets.
+						</p>
+						<Button size="lg" link="/features" classes="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+							Découvrir nos services
+						</Button>
+					</div>
+					
+					<!-- Image/Visual -->
+					<div class="relative">
+						<div class="bg-gradient-to-br from-primary-600 to-secondary-700 rounded-3xl p-8 md:p-12 text-white">
+							<div class="text-center mb-8">
+								<div class="w-24 h-24 mx-auto bg-white/20 rounded-full flex items-center justify-center mb-4">
+									<svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+									</svg>
+								</div>
+								<h3 class="text-2xl font-bold mb-2">Le Fondateur</h3>
+								<p class="text-primary-200 text-sm">Expert en Web Marketing BTP</p>
+							</div>
+							
+							<blockquote class="text-lg italic text-primary-100 border-l-4 border-white/30 pl-4">
+								"Après avoir vu tant d'entreprises BTP avec un potentiel énorme mais sans présence digitale efficace, j'ai décidé de me spécialiser dans ce secteur. Mon objectif : vous aider à remplir votre carnet de commandes."
+							</blockquote>
+							
+							<div class="mt-6 pt-6 border-t border-white/20">
+								<p class="text-sm text-primary-200">
+									<strong class="text-white">Expérience :</strong> Expert en web marketing et création de sites optimisés pour le BTP, avec des années d'expérience dans la génération de leads pour les entreprises de construction et travaux publics.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+	
+	<!-- Stats Section -->
+	<Section id="stats" classes="py-20 bg-gradient-to-br from-neutral-900 via-secondary-950 to-neutral-900 text-white">
+		<Row>
+			<Col span="12">
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+					{stats.map((stat) => (
+						<div class="text-center group">
+							<div class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+								{stat.number}
+							</div>
+							<p class="text-neutral-400">{stat.label}</p>
+						</div>
+					))}
+				</div>
+			</Col>
+		</Row>
+	</Section>
+	
+	<!-- Values Section -->
+	<Section id="values" classes="py-20 bg-white dark:bg-neutral-950">
+		<Row>
+			<Col span="12" align="center" classes="mb-12">
+				<span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium mb-4">
+					NOS VALEURS
+				</span>
+				<h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white">
+					Ce qui nous guide au quotidien
+				</h2>
+			</Col>
+		</Row>
+		<Row>
+			{values.map((value) => (
+				<Col span="6" classes="mb-8">
+					<div class="group h-full p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-transparent transition-all duration-500 hover:shadow-xl hover:-translate-y-2 bg-white dark:bg-neutral-900">
+						<div class="text-primary-600 dark:text-primary-400 mb-4 group-hover:scale-110 transition-transform duration-300" set:html={value.icon} />
+						<h3 class="text-xl font-bold mb-3 text-neutral-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+							{value.title}
+						</h3>
+						<p class="text-neutral-600 dark:text-neutral-400">
+							{value.description}
+						</p>
+					</div>
+				</Col>
+			))}
+		</Row>
+	</Section>
+	
+	<!-- Why BTP Section -->
+	<Section id="why-btp" classes="py-20 bg-gradient-to-b from-primary-50/50 to-white dark:from-neutral-900 dark:to-neutral-950">
+		<Row>
+			<Col span="12">
+				<div class="max-w-4xl mx-auto text-center">
+					<span class="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium mb-4">
+						NOTRE SPÉCIALISATION
+					</span>
+					<h2 class="text-3xl md:text-4xl font-bold mb-6 text-neutral-900 dark:text-white">
+						Pourquoi nous nous concentrons sur le BTP ?
+					</h2>
+					<p class="text-lg text-neutral-600 dark:text-neutral-400 mb-8">
+						Le secteur du BTP a des besoins uniques en matière de marketing digital. Les clients recherchent des entreprises locales, veulent voir des réalisations concrètes, et ont besoin de confiance avant de s'engager sur un projet souvent coûteux.
+					</p>
+					
+					<div class="grid md:grid-cols-3 gap-6 mt-12">
+						<div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-lg border border-neutral-200 dark:border-neutral-800">
+							<div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-600 flex items-center justify-center">
+								<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+								</svg>
+							</div>
+							<h3 class="font-bold text-neutral-900 dark:text-white mb-2">Recherche Locale</h3>
+							<p class="text-sm text-neutral-600 dark:text-neutral-400">
+								90% des clients BTP cherchent des prestataires dans leur zone géographique.
+							</p>
+						</div>
+						
+						<div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-lg border border-neutral-200 dark:border-neutral-800">
+							<div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-secondary-500 to-accent-600 flex items-center justify-center">
+								<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+								</svg>
+							</div>
+							<h3 class="font-bold text-neutral-900 dark:text-white mb-2">Preuves Visuelles</h3>
+							<p class="text-sm text-neutral-600 dark:text-neutral-400">
+								Les photos avant/après et les réalisations sont essentielles pour convaincre.
+							</p>
+						</div>
+						
+						<div class="bg-white dark:bg-neutral-900 rounded-xl p-6 shadow-lg border border-neutral-200 dark:border-neutral-800">
+							<div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-accent-500 to-warning-600 flex items-center justify-center">
+								<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+								</svg>
+							</div>
+							<h3 class="font-bold text-neutral-900 dark:text-white mb-2">Projets à Forte Valeur</h3>
+							<p class="text-sm text-neutral-600 dark:text-neutral-400">
+								Chaque lead qualifié peut représenter plusieurs milliers d'euros de chiffre d'affaires.
+							</p>
+						</div>
+					</div>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+	
+	<FinalCTA />
+</Layout>

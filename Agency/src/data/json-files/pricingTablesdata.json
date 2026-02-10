@@ -1,77 +1,85 @@
 [
 	{
 		"header": {
-			"title": "Basic",
-			"subtitle": "Ideal for individual developers.",
-			"currency": "$",
-			"price": "19",
-			"priceLabel": "month, billed anually",
-			"priceMontly": "25",
-			"priceLabelMontly": "month",
-			"buttonName": "Try for free",
-			"buttonLink": "/"
+			"title": "Pack Essentiel",
+			"subtitle": "Site Web BTP",
+			"currency": "€",
+			"price": "500",
+			"priceLabel": "à partir de",
+			"priceMontly": "800",
+			"priceLabelMontly": "jusqu'à",
+			"buttonName": "Obtenir ce pack",
+			"buttonLink": "/contact"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Join forces with fellow architects" },
-				{ "listItem": "Present your projects with flair and captivate your audience." },
-				{ "listItem": "Immerse yourself in the dynamic realm of architecture." }
+				{ "listItem": "Site optimisé pour conversion" },
+				{ "listItem": "Présentation de vos services BTP" },
+				{ "listItem": "Formulaire de contact efficace" },
+				{ "listItem": "Design professionnel et moderne" },
+				{ "listItem": "Responsive mobile" }
 			]
 		},
 		"footer": {
-			"buttonName": "See all features",
-			"buttonLink": "/"
+			"buttonName": "Commencez à générer des leads",
+			"buttonLink": "/contact"
 		},
 		"type": "basic"
 	},
 	{
 		"header": {
-			"title": "Team",
-			"subtitle": "Ideal for small teams",
-			"currency": "$",
-			"price": "29",
-			"priceLabel": "month, billed anually",
-			"priceMontly": "35",
-			"priceLabelMontly": "month",
-			"buttonName": "Try for free",
-			"buttonLink": "/"
+			"title": "Pack Croissance",
+			"subtitle": "Site + Leads",
+			"currency": "€",
+			"price": "1500",
+			"priceLabel": "à partir de",
+			"priceMontly": "3000",
+			"priceLabelMontly": "jusqu'à",
+			"buttonName": "Commencer à générer des projets",
+			"buttonLink": "/contact"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Join forces with fellow architects" },
-				{ "listItem": "Present your projects with flair and captivate your audience." },
-				{ "listItem": "Immerse yourself in the dynamic realm of architecture." },
-				{ "listItem": "Unlock endless inspiration" }
+				{ "listItem": "Tout le Pack Essentiel inclus" },
+				{ "listItem": "Campagnes publicitaires ciblées" },
+				{ "listItem": "Optimisation SEO locale" },
+				{ "listItem": "Génération de leads qualifiés" },
+				{ "listItem": "Demandes de devis automatisées" },
+				{ "listItem": "Suivi mensuel des performances" }
 			]
 		},
 		"footer": {
-			"buttonName": "See all features",
-			"buttonLink": "/"
+			"buttonName": "Remplissez votre agenda de chantiers",
+			"buttonLink": "/contact"
 		},
 		"type": "featured"
 	},
 	{
 		"header": {
-			"title": "Enterprise",
-			"subtitle": "Ideal for companies",
-			"currency": "$",
-			"price": "49",
-			"priceLabel": "month, billed anually",
-			"priceMontly": "65",
-			"priceLabelMontly": "month",
-			"buttonName": "Try for free",
-			"buttonLink": "/"
+			"title": "Pack Premium",
+			"subtitle": "Full Service BTP",
+			"currency": "€",
+			"price": "5000",
+			"priceLabel": "à partir de",
+			"priceMontly": "10000",
+			"priceLabelMontly": "jusqu'à",
+			"buttonName": "Mettre mon entreprise sur pilote automatique",
+			"buttonLink": "/contact"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Join forces with fellow architects" },
-				{ "listItem": "Present your projects with flair and captivate your audience." },
-				{ "listItem": "Immerse yourself in the dynamic realm of architecture." }
+				{ "listItem": "Tout le Pack Croissance inclus" },
+				{ "listItem": "Dashboard de gestion complet" },
+				{ "listItem": "SEO avancé et contenu" },
+				{ "listItem": "Système de gestion des leads" },
+				{ "listItem": "Support prioritaire dédié" },
+				{ "listItem": "Rapports détaillés et analytics" },
+				{ "listItem": "Accompagnement stratégique" }
 			]
 		},
 		"footer": {
-			"buttonName": "See all features",
-			"buttonLink": "/"
+			"buttonName": "Plus de clients, moins de stress",
+			"buttonLink": "/contact"
 		},
 		"type": "basic"
 	}

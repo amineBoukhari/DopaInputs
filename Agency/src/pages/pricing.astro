@@ -1,50 +1,144 @@
 ---
+// Pricing Page - BTP Agency
+// ------------
+// Description: Pricing page with BTP packages
+
 // Components
 // - Layout
 import Layout from '../layouts/Layout.astro'
 // - UI
-import Hero from '../components/blocks/hero/PageHeader.astro'
-import Price from '../components/blocks/pricing/PricingColumns.astro'
-import SocialProof from '../components/blocks/socialproof/Basic.astro'
-import FAQ from '../components/blocks/FAQ/Basic.astro'
-import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
-import Feature from '../components/blocks/features/FeatureList.astro'
-import CTA from '../components/blocks/CTA/BasicDark.astro'
+import Section from '../components/ui/Section.astro'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+import Button from '../components/ui/Button.astro'
+import PricingBTP from '../components/blocks/pricing/PricingBTP.astro'
+import FAQBTP from '../components/blocks/FAQ/FAQBTP.astro'
+import FinalCTA from '../components/blocks/CTA/FinalCTA.astro'
 
 // Content
 // - SEO
 const SEO = {
-	title: 'Pricing Plans | Find Your Perfect Plan',
+	title: 'Tarifs | Nos Packs pour Générer Plus de Chantiers',
 	description:
-		'Discover transparent pricing plans designed for every business. From startups to enterprises, get powerful features with no hidden fees. Start your journey today!'
+		'Des offres adaptées à toutes les entreprises BTP, que vous ayez déjà un site ou non. Découvrez nos packs pour générer plus de chantiers.'
 }
-// - Page Header
-const header = {
-	title: 'Choose the plan that <strong class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">perfectly fits</strong> your needs',
-	text: 'All plans come with a 30-day money-back guarantee. No hidden fees, cancel anytime.'
-}
-// - Testimonial data
-import testimonialBackground from '../assets/testimonial-bg-02.webp'
-const testimonialData = {
-	blockquote:
-		"Foxi isn't just an app—it's like having a mischievous yet brilliant sidekick for your business. It streamlines tasks and also cracks jokes to keep spirits high",
-	figcaption: 'Max Widgetson',
-	cite: ' CEO, Widgetify Ltd'
-}
+
+const guarantees = [
+	{
+		icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+		</svg>`,
+		title: 'Satisfaction garantie',
+		description: 'Nous travaillons jusqu\'à ce que vous soyez 100% satisfait du résultat.'
+	},
+	{
+		icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+		</svg>`,
+		title: 'Livraison rapide',
+		description: 'Votre site est livré en 2-4 semaines selon la complexité du projet.'
+	},
+	{
+		icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+		</svg>`,
+		title: 'Support inclus',
+		description: '30 jours de support offerts après la livraison de votre projet.'
+	},
+	{
+		icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+		</svg>`,
+		title: 'Paiement flexible',
+		description: 'Paiement en plusieurs fois possible pour faciliter votre investissement.'
+	}
+]
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<Hero title={header.title} text={header.text} />
-	<Price />
-	<SocialProof />
-	<Feature />
-	<Testimonial
-		bg={testimonialBackground}
-		bgPosition="left"
-		blockquote={testimonialData.blockquote}
-		figcaption={testimonialData.figcaption}
-		cite={testimonialData.cite}
-	/>
-	<FAQ classes="bg-gradient-to-b from-blue-50/30 to-white dark:from-neutral-900/40 dark:to-neutral-950" />
-	<CTA />
+
+	<!-- Pricing Section -->
+	<PricingBTP />
+	
+	<!-- Guarantees Section -->
+	<Section id="guarantees" classes="py-20 bg-white dark:bg-neutral-950">
+		<Row>
+			<Col span="12" align="center" classes="mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white">
+					Nos garanties
+				</h2>
+				<p class="text-neutral-600 dark:text-neutral-400 mt-4">
+					Nous nous engageons à vous fournir un service de qualité
+				</p>
+			</Col>
+		</Row>
+		<Row>
+			{guarantees.map((guarantee) => (
+				<Col span="3" classes="mb-6">
+					<div class="text-center group">
+						<div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary-500 to-secondary-600 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300" set:html={guarantee.icon} />
+						<h3 class="font-bold text-neutral-900 dark:text-white mb-2">{guarantee.title}</h3>
+						<p class="text-sm text-neutral-600 dark:text-neutral-400">{guarantee.description}</p>
+					</div>
+				</Col>
+			))}
+		</Row>
+	</Section>
+	
+	<!-- Comparison Note -->
+	<Section id="comparison" classes="py-16 bg-gradient-to-b from-primary-50/50 to-white dark:from-neutral-900 dark:to-neutral-950">
+		<Row>
+			<Col span="12">
+				<div class="max-w-4xl mx-auto bg-white dark:bg-neutral-900 rounded-2xl shadow-xl border border-neutral-200 dark:border-neutral-800 p-8 md:p-12">
+					<div class="grid md:grid-cols-2 gap-8 items-center">
+						<div>
+							<h2 class="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white mb-4">
+								Vous ne savez pas quel pack choisir ?
+							</h2>
+							<p class="text-neutral-600 dark:text-neutral-400 mb-6">
+								Contactez-nous pour un diagnostic gratuit. Nous analyserons votre situation et vous recommanderons la solution la plus adaptée à vos objectifs et votre budget.
+							</p>
+							<Button size="lg" link="/contact" classes="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+								Demander un diagnostic gratuit
+							</Button>
+						</div>
+						<div class="bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-xl p-6">
+							<h3 class="font-bold text-neutral-900 dark:text-white mb-4">Ce que nous analysons :</h3>
+							<ul class="space-y-3">
+								<li class="flex items-start gap-3">
+									<svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+									</svg>
+									<span class="text-neutral-700 dark:text-neutral-300">Votre présence actuelle en ligne</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+									</svg>
+									<span class="text-neutral-700 dark:text-neutral-300">Vos objectifs de croissance</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+									</svg>
+									<span class="text-neutral-700 dark:text-neutral-300">Votre concurrence locale</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+									</svg>
+									<span class="text-neutral-700 dark:text-neutral-300">Votre budget disponible</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</Col>
+		</Row>
+	</Section>
+	
+	<!-- FAQ Section -->
+	<FAQBTP />
+	
+	<FinalCTA />
 </Layout>

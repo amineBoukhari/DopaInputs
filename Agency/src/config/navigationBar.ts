@@ -38,10 +38,10 @@ export const navigationBarData: NavData = {
 		text: 'Vitanorix'
 	},
 	navItems: [
-		{ name: 'Home', link: '/' },
-		{ name: 'Pricing', link: '/pricing' },
-		{ name: 'Features', link: '/features' },
-		{
+		{ name: 'Accueil', link: '/' },
+		{ name: 'Tarifs', link: '/pricing' },
+		{ name: 'Services', link: '/services' },
+		/*{
 			name: 'Resources',
 			link: '#',
 			submenu: [
@@ -50,8 +50,8 @@ export const navigationBarData: NavData = {
 				{ name: 'FAQ', link: '/faq' },
 				{ name: 'Terms', link: '/terms' }
 			]
-		},
+		},*/
 		{ name: 'Contact', link: '/contact' }
 	],
-	navActions: [{ name: 'Try it now', link: '/', style: 'primary', size: 'lg' }]
+	navActions: [{ name: 'Essayez maintenant', link: '/', style: 'primary', size: 'lg' }]
 }

@@ -21,13 +21,13 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Foxi. Tailwind CSS Astro Starter Kit by Oxygenna',
+	siteTitle: 'Vitanorix. Starter Kit Tailwind CSS pour Astro',
 	siteDescription:
-		'Foxi is a design and development agency that specializes in creating beautiful and functional websites.',
+		'Vitanorix est une agence de design et de développement spécialisée dans la création de sites web esthétiques et fonctionnels.',
 	ogImage: '/og.jpg',
 	logo: {
-		src: '/logo.svg',
-		alt: 'Foxi. logo'
+		src: '/logo.png',
+		alt: 'Vitanorix logo'
 	},
 	canonical: true,
 	noindex: false,
